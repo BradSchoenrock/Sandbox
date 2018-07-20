@@ -1,0 +1,69 @@
+these scripts were originally used for madgraph generation. they can be edited for other porposes. 
+
+Brad Schoenrock 4-15-13 
+***********************************
+
+
+start by runing 
+
+bash setupJobSumition.sh
+
+this sets up directories SubmitError, SubmitLog, and SubmitOutput which is where 
+output files will be stored 
+
+then edit GenerateSubmit.sh in the following ways
+1)adjust the path names to the directory you want
+2)adjust source2 to be the script you want to run
+3)adjust n to be the number of jobs you want to submit
+4)adjust count to be the number of jobs you want to submit
+
+note: if you are not starting at 1 in these two loops then all submit commands written 
+to MainSubmit.sh will be appended to the end of the file rather than creating a new file
+
+the result of running 
+
+bash GenerateSubmit.sh 
+
+will be the following
+
+it creates MainSubmit.sh
+it creates a series of SubMainSubmit###.sh and SubMainSubmit###.submit scripts that 
+aid in the job submition in the SubMainSubmit directory
+
+then to submit jobs run 
+
+bash MainSubmit.sh
+
+the output directories were set up by running setupJobSubmition.sh earlier
+
+
+
+********************
+once your jobs are submited you can run 
+
+condor_q
+
+or 
+
+condor_q yourUserName
+
+to see the jobs currently in the queue
+
+or if things have started to go awry you can do 
+
+condor_rm "processNumber"
+
+to remove the job from condor
+
+**********************
+
+a note on concurrency limits
+
+#ConcLim="Concurrency_Limits = DISK_T3WORK5:40"
+
+#echo "${ConcLim}" >> /home/schoenr1/work/Madgraph/SubMainSubmit/SubMainSubmit$1.submit
+
+uncomment these lines and change T3WORK5 to the disk you are working on to avoid 
+overloading one disk with many jobs that are reading in or writing to the same disk. 
+
+

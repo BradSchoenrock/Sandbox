@@ -1,0 +1,119 @@
+# sets it up so i don't have to keep terminals open
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+function emacs
+{
+    command emacs "$1" --name $1 &
+}
+
+function xpdf
+{
+    command xpdf "$1" &
+}
+
+function LHEF 
+{
+#command /home/willisc/ExRootAnalysis/ExRootAnalysis/ExRootLHEFConverter $1 $2 
+    command /home/schoenr1/work/Madgraph/ExRootAnalysis/ExRootLHEFConverter $1 $2 
+}
+
+##Make Tarbal
+function tarball()
+{
+    tarballname="${1}.tgz"
+    tar -cvzf ${tarballname} $1
+}
+
+function condor_q
+{
+    if [ -z $1 ]
+	then
+	command condor_q
+    else
+	command condor_q "$1"
+    fi   
+    date
+}
+
+alias rm="sleep 5;rm"
+
+alias eamcs="emacs"
+alias meacs="emacs"
+alias emcas="emacs"
+alias home="cd ~"
+alias bashrc="home; emacs .bashrc; cd -;"
+alias ls="pwd;ls --color=auto -rh"
+alias sl="ls --color=auto -rh"
+
+alias dush="du -hsm *|sort -n|tail"
+
+alias 23="ssh schoenr1@hx23.pa.msu.edu"
+alias 18="ssh schoenr1@hx18.pa.msu.edu"
+
+#doesn't display the splash screen
+alias root="root -l"
+
+alias grep='grep --color=always'
+
+alias setdq2="source /afs/cern.ch/atlas/offline/external/GRID/ddm/DQ2Clients/setup.sh;export DQ2_LOCAL_SITE_ID=AGLT2_USERDISK;voms-proxy-init -voms atlas"
+
+#seting up athena
+export AtlasSetup=/cvmfs/atlas.cern.ch/repo/sw/software/17.2.10/AtlasSetup/
+#export AtlasSetup=/cvmfs/atlas.cern.ch/repo/sw/software/17.3.4/AtlasSetup/
+#export AtlasSetup=/cvmfs/atlas.cern.ch/repo/sw/software/17.0.5/AtlasSetup
+#export AtlasSetup=/afs/cern.ch/atlas/software/dist/AtlasSetup
+
+alias asetup='source $AtlasSetup/scripts/asetup.sh 17.2.10'
+#alias asetup='source $AtlasSetup/scripts/asetup.sh 17.3.4'
+
+alias cmtsrc="source /afs/cern.ch/sw/contrib/CMT/v1r20p20090520/mgr/setup.sh"
+
+alias svnsetup='export SVNROOT=svn+ssh://bschoenr@svn.cern.ch/reps/atlasoff && kinit bschoenr@CERN.CH'
+
+alias svnkinit="kinit bschoenr@CERN.CH"
+
+source /afs/cern.ch/sw/lcg/external/gcc/4.3.2/x86_64-slc5/setup.sh
+source /afs/cern.ch/sw/lcg/app/releases/ROOT/5.34.00/x86_64-slc5-gcc43-opt/root/bin/thisroot.sh
+
+export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH:./lib/:
+
+#for STRA
+export LD_LIBRARY_PATH=/home/schoenr1/SingleTopRootAnalysis/trunk/externaltools/pileup/StandAlone:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/schoenr1/SingleTopRootAnalysis/trunk/externaltools/GRL/StandAlone:$LD_LIBRARY_PATH
+
+export PATHENA_GRID_SETUP_SH=/afs/cern.ch/project/gd/LCG-share/current/etc/profile.d/grid_env.sh
+export DQ2_LOCAL_SITE_ID=AGLT2_USERDISK
+export CVS_RSH=ssh 
+
+export LD_LIBRARY_PATH=/msu/opt/cern/Python-2.6.5/:$LD_LIBRARY_PATH
+export PATH=/msu/opt/cern/Python-2.6.5/:$PATH
+export PYTHONPATH=$ROOTSYS/lib:/msu/opt/cern/Python/Python-2.6.5/Lib/
+#export PYTHONPATH=$ROOTSYS/lib:$PYTHONDIR/lib/python2.6
+
+export PATH=$ROOTSYS/bin:$PYTHONDIR/bin:$PATH
+export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib/python2.6:$LD_LIBRARY_PATH
+export PYTHONPATH=$ROOTSYS/lib:$PYTHONDIR/lib/python2.6
+
+
+
+#old athena versions
+#export AtlasSetup=/msu/data/t3work2/koll/Athenaslc5/17.0.5.1/AtlasSetup
+#export AtlasSetup=/msu/data/t3work2/koll/Athenaslc5/16.6.0/AtlasSetup
+#export AtlasSetup=/afs/cern.ch/atlas/software/dist/AtlasSetup
+#alias asetup='source $AtlasSetup/scripts/asetup.sh'
+
+
+#root versions
+#export ROOTSYS=/msu/opt/cern/root/pro_64/
+#export PATH=./:$ROOTSYS/bin:$PATH
+#export SHLIB_PATH=$ROOTSYS/lib:${SHLIB_PATH}
+#export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH:./lib/:
+
+#export ROOTSYS=/msu/opt/cern/root/pro_64/rootsetup.sh
+#source /home/koll/pacman-3.29/setup.sh
+#export PATH=.:$ROOTSYS/bin:$PATH
+#export LD_LIBRARY_PATH=lib:$ROOTSYS/lib:/home/wfedorko/MSU_framework_co_20110120/trunk/externalTools/GRL/StandAlone
+
+

@@ -1,0 +1,40 @@
+PING hx1.pa.msu.edu (35.9.71.77) 56(84) bytes of data.
+
+--- hx1.pa.msu.edu ping statistics ---
+644 packets transmitted, 0 received, 100% packet loss, time 644048ms
+
+PING hx2.pa.msu.edu (35.9.71.78) 56(84) bytes of data.
+
+--- hx2.pa.msu.edu ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 203ms
+
+PING hx3.pa.msu.edu (35.9.71.79) 56(84) bytes of data.
+
+--- hx3.pa.msu.edu ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 195ms
+
+PING hx4.pa.msu.edu (35.9.71.80) 56(84) bytes of data.
+
+--- hx4.pa.msu.edu ping statistics ---
+7 packets transmitted, 0 received, 100% packet loss, time 6176ms
+
+PING hx5.pa.msu.edu (35.9.71.164) 56(84) bytes of data.
+
+--- hx5.pa.msu.edu ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 426ms
+
+PING hx6.pa.msu.edu (35.9.71.86) 56(84) bytes of data.
+
+--- hx6.pa.msu.edu ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 127ms
+
+PING hx7.pa.msu.edu (35.9.71.87) 56(84) bytes of data.
+
+--- hx7.pa.msu.edu ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 96ms
+
+PING hx8.pa.msu.edu (35.9.71.88) 56(84) bytes of data.
+
+--- hx8.pa.msu.edu ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 472ms
+
