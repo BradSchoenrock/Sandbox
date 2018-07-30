@@ -1,0 +1,44 @@
+;; This buffer is for notes you don't want to save, and for Lisp evaluation.
+;; If you want to create a file, visit that file with C-x C-f,
+;; then enter the text in that file's own buffer.
+
+
+
+
+Raw NetCDF files to Pseudo CFRadial files
+
+Python code 
+
+[brads@saturn hsrl_python]$ pwd
+/h/eol/brads/code/hsrl_python
+
+./scripts/cset-cfradial.py 
+
+
+
+
+Pseudo CFRadial files to CFradial
+
+Hsrl2Radx
+
+[brads@saturn params]$ pwd
+/h/eol/brads/git/hsrl_configuration/projDir/ingest/params
+
+Hsrl2Radx -params Hsrl2Radx.test -debug -f /tmp/gvhsrl_20150729T1930_20150729T2000.nc
+
+
+
+
+CFRadial to HawkEye display
+
+[brads@saturn params]$ pwd
+/h/eol/brads/test/display/params
+
+HawkEye -params HawkEye.hsrl-brad
+
+
+
+
+
+
+ncdump gvhsrl_20150729T1930_20150729T2000.nc | less
