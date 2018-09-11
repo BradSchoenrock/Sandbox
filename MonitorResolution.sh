@@ -7,6 +7,12 @@ cvt 1920 1080
 sudo xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 
 sudo xrandr --addmode eDP-1 "1920x1080_60.00"
+sudo xrandr --addmode DP-1 "1920x1080_60.00"
+sudo xrandr --addmode DP-1-1 "1920x1080_60.00"
+sudo xrandr --addmode DP-1-2 "1920x1080_60.00"
+sudo xrandr --addmode DP-1-3 "1920x1080_60.00"
+sudo xrandr --addmode HDMI-1 "1920x1080_60.00"
+sudo xrandr --addmode HDMI-2 "1920x1080_60.00"
 
 xrandr --output eDP-1 --scale 1x1
 
