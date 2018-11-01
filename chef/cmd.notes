@@ -1,0 +1,7 @@
+chef generate cookbook cookbooks/apache
+chef generate recipe cookbooks/apache/ server
+
+
+sudo chef-client -z -r "recipe[workstation::setup],recipe[apache::server]"
+
+
