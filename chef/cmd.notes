@@ -5,3 +5,34 @@ chef generate recipe cookbooks/apache/ server
 sudo chef-client -z -r "recipe[workstation::setup],recipe[apache::server]"
 
 
+
+
+knife bootstrap 10.0.0.50 -x silver -P 'Cod3Can!' --sudo -N node1
+knife node run_list add node1 "recipe[apache]"
+
+knife bootstrap 10.0.0.50 -x silver -P 'Cod3Can!' -N node2 -r 'recipe[apache]' --sudo
+
+knife node list
+knife node show node1
+
+knife search node "*:*"
+knife search node "*:*" -a ipaddress
+
+
+knife search node "recipes:apache\:\:default" -a ipaddress
+knife node show node1 -a cloud
+knife node show node1 -a ipaddress
+
+knife ssh "*:*" -x silver -P 'Cod3Can!' -a ipaddress "sudo chef-client"
+
+knife role --help
+
+knife ssh "*:*" -x silver -P 'Cod3Can!' -a ipaddress "sudo cat /etc/chef/client.rb"
+
+knife environment from file production.rb 
+
+knife environment list
+
+knife bootstrap 10.0.0.76 -x silver -P 'Cod3Can!' -N node4 -r 'recipe[my_chef_client],recipe[apache]' -E acceptance --sudo
+
+
