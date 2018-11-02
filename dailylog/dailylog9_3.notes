@@ -1,0 +1,38 @@
+Last Week's Overview
+
+continue training & SME expansion (ongoing & forever)
+respond to / listen in on outages that i am aware of
+Define needs, metrics, constraints on our data set for ML
+assess data sources as ingest into ML algorithms
+
+-----------------------------------
+
+9/4
+1 hr - sprint update meeting with Devin
+1 hr - scaled tiles talk
+1 hr - talk with shamil about data sources & scope
+5 hrs - planning out ML work, scope, minimum viable product, etc... 
+1 hr - mop review LSM.xml config change
+
+9/5
+6 hrs - planning out ML work, scope, minimum viable product, etc... 
+2 hrs - funnels related inquiry from sst
+1 hr - discussion with david about ML
+
+9/6
+2 hr - funnels related inquiry from sst RE: MariaDB and mysql monitoring
+3 hrs - reading up on chalk pages related to funnels
+1 hr - checking up on AM data coming through 
+3 hrs - working with danielle on funnels 
+
+9/7
+1 hr - scrum and misc follow up discussions
+5 hrs - funnel debug with danielle 
+
+-----------------------------------
+
+Plans for this week
+
+follow up on funnels issues that danielle and i worked on last week
+meeting with devin, shamil, and alex about ML
+develop ingest with data quality checks for CSM data & create histograms 

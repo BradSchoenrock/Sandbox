@@ -1,0 +1,52 @@
+Alex wasn't as available as i had hoped to create the front page for ML insights. Otherwise tasks were largely completed. 
+
+Last Week's Goals
+
+finish chalk page for last weeks outage outlined in retrospective
+Bharat asked for chalk pages to be created for his other outages
+create chalk page for ML for self healing
+assist AV in log gathering as needed. <- this has been a large time sink. 
+create front page for ML insights viewing w/ alex
+get alex's code into gitlab repo
+
+-----------------------------------
+
+10/1
+1 hr - mop review: docsis bandwidth unavailable
+2 hrs - reviewing stitcher load
+3 hrs - having to add more DQ checks for CSM session ingest process
+1 hr - html5 process dissasembly info gathering 
+3 hrs - helping alex parse some AM data (fixing alex's scripts)
+
+10/2
+1 hr - morning meeting
+4 hrs - setting up charter laptop for use once apex laptop gets returned
+4 hrs - having to add more DQ checks for CSM session ingest process
+1 hr - getting on TMC rack & checking tiles 
+
+10/3
+1 hr - scrum and misc discussions
+2 hrs - setting up charter laptop for use once apex laptop gets returned
+3 hrs - having to add more DQ checks for CSM session ingest process
+1 hr - guide and latency meeting 
+
+10/4
+3 hrs - cco/chef meeting & discussions
+3 hrs - checking timings of srmBandwidthUnavailable
+1 hr - html5 hung processes info gathering for AV
+1 hr - running CSM Session processing
+1 hr - cleaning up git repos 
+
+10/5
+1 hr - scrum and misc discussions 
+2 hrs - updating SVAV27 hung html5client
+2 hrs - looking into anomoly detection algorithms 
+1 hr - chalk updates 
+2 hrs - twcca outage w/ shamil
+
+-----------------------------------
+
+Plans for this week
+conversion orientation and onboarding
+deriving models for session data OR creating dashboard with alex
+any follow up with AV for html5client processes
