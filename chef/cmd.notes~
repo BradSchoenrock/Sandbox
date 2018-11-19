@@ -1,4 +1,0 @@
-chef generate cookbook cookbooks/apache
-chef generate recipe cookbooks/apache/ server
-
-
