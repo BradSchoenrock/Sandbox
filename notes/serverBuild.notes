@@ -1,0 +1,67 @@
+check hostmatrix and ping for unused IP address to verify free IP
+
+
+
+check email for chalk page from raj on how to terraform build a server 
+
+
+
+find terraform on gitlab for market
+
+https://git01pvdcco.pvdc.co.charter.com/terraform/spec_prod?utf8=%E2%9C%93&filter=twcoh
+
+on wrk01pvdcco.asdfasdfasdfasdf
+
+check spec-build if not in spec-prod
+
+go to vcenter: get credentials
+
+must be on workserver
+
+terraform.pem in home directory
+
+main.tf
+	instantiates variables here
+	voes-mc name of server 
+	give variable to be defined in another file
+01-vars.tf: 
+	specify all variables here
+	
+
+terraform.tfvars
+	voes-mc overrides - specs of server 
+	copy net_label
+	copy gateway
+	give yourself an IP address
+	
+back to vcenter - check resources to ensure we don't overload datastore
+
+go to ams in vsphere check vlan in network adapter for net_label
+
+go to ams in vsphere check gateway
+
+
+on wrk - 
+terraform init
+terraform plan --target=module.stuffasdfasdf 
+terraform apply --target=module.stuffasdfasdf
+
+login to server and run chef
+chef-client -E stuffandthingsandasdfasdfasdf
+
+silver has root privaliges
+
+
+
+
+
+
+
+
+
+
+
+
+echo $? 
+to tell exit code of previous command
+

@@ -1,0 +1,31 @@
+Hi Brad,
+
+ 
+
+Can you please try this out with your username:
+
+ 
+
+On your local terminal:
+
+ssh -N -f -L localhost:8889:localhost:8889 98.8.163.106
+
+ 
+
+On your local browser:
+
+http://localhost:8889
+
+ 
+
+If it works, it should ask for a token. Did it?
+
+ 
+
+The token is:
+
+5673bbbe8298814ef383e2d248dbb27285224fabe5dd155a
+
+ 
+
+You should then see Alex-test.ipynb, try to open and run it
