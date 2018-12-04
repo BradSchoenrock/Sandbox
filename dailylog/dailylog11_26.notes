@@ -27,13 +27,30 @@ Status Update:
 11/28
 2 hrs - building servers with terraform training with raj
 1 hr - standup and misc discussions
+1 hr - customer impacting issues meeting 
+2 hrs - revamping output of color codes output for sakshi report
+1 hr - processing CSM session data
+3 hrs - CSM time delta modeling for ML
 
+11/29
+1 hr -  processing CSM session data
+2 hrs - netscout training
+1 hr - 1 on 1 with john
+2 hrs - AM data quality discussions with Alex & Shamil 
+2 hrs -  CSM time delta modeling for ML
 
+11/30
+2 hrs -  CSM time delta modeling for ML
+2 hrs - rabbitMQ discussion
+2 hrs - elastic stack elastalert meeting 
+1 hr - adjusting output of color codes for displays
+1 hr - reading in from RabbitMQ
 
 -----------------------------------
 
 Plans for this week
 
-
-
-
+work on RabbitMQ intake for real time streaming
+finish training
+assist on daily report training
+get ready for on call starting friday
