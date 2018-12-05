@@ -38,6 +38,6 @@ to run producer and consumer locally -
 
 cd /home/bschoenrock/Sandbox/kafka/kafka_2.11-2.1.0
 
-bin/kafka-console-producer.sh --broker-list 98.8.170.176:8080 --topic bradsTestTopic
+/home/bschoenrock/Sandbox/kafka/kafka_2.11-2.1.0/bin/kafka-console-producer.sh --broker-list 98.8.170.176:8080 --topic bradsTestTopic
 
-bin/kafka-console-consumer.sh --bootstrap-server 98.8.170.176:8080 --topic bradsTestTopic 
+/home/bschoenrock/Sandbox/kafka/kafka_2.11-2.1.0/bin/kafka-console-consumer.sh --bootstrap-server 98.8.170.176:8080 --topic bradsTestTopic 
