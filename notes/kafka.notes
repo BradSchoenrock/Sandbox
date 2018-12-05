@@ -9,5 +9,35 @@ voes-kafka01pvdcco.pvdc.co.charter.com
 98.8.170.178
 
 ports- 
-9092
-8080
+2181 - creation of topics
+9092 - producers & consumers
+8080 - producers & consumers 
+
+
+
+set up dummy kafka server instructions: 
+https://kafka.apache.org/quickstart
+
+
+
+to set up topic - 
+
+ssh 98.8.170.176
+
+/opt/kafka/kafka_2.11-1.1.0/bin/kafka-topics.sh --create --zookeeper 98.8.170.176:2181,98.8.170.177:2181,98.8.170.178:2181 --replication-factor 3 --partitions 6 --topic bradTestTopic --config cleanup.policy=delete --config delete.retention.ms=60000
+
+
+
+to list existing topics - 
+
+/opt/kafka/kafka_2.11-1.1.0/bin/kafka-topics.sh --list --zookeeper 98.8.170.176:2181
+
+
+
+to run producer and consumer locally - 
+
+cd /home/bschoenrock/Sandbox/kafka/kafka_2.11-2.1.0
+
+bin/kafka-console-producer.sh --broker-list 98.8.170.176:8080 --topic bradsTestTopic
+
+bin/kafka-console-consumer.sh --bootstrap-server 98.8.170.176:8080 --topic bradsTestTopic 
