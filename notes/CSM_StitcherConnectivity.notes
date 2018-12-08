@@ -1,0 +1,4 @@
+check the following result approx. matches on all three CSMs
+
+
+ netstat -ant | grep 16668 | wc -l

@@ -1,5 +1,3 @@
-# producer.py
- 
 from kafka import KafkaProducer
  
 KAFKA_TOPIC = 'bradsTestTopic'
