@@ -1,4 +1,11 @@
 check the following result approx. matches on all three CSMs
 
 
- netstat -ant | grep 16668 | wc -l
+ netstat -ant | grep 16668[\ ]*ESTABLISHED | wc -l
+
+
+to debug
+
+netstat -ant | grep 16668[\ ]*SYN_SENT
+
+

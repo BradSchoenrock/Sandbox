@@ -1,0 +1,49 @@
+Last Week's Overview
+
+given our meeting this morning (8/27) plans have shifted from working on MC/ML to focusing on operational readiness and becoming an SME on other technologies in our stack (stitchers for example) 
+
+-----------------------------------
+
+8/27
+1 hr - opening and looking into stitcher balancing issues
+2 hrs - redirection meeting for the group with Shamil
+1 hr - spectrum architecture talk with Shamil & Ben
+1 hr - digging into stitchers for twctx outage
+1 hr - looking at mop created for twctx outage
+1 hr - looking into audiance measurement data with alex, steve, & carlos
+1 hr - attending mop meeting for twctx outage
+1 hr - fixing my dual boot problems
+1 hr - talking with alex about stitcher balancing
+
+8/28
+1 hr  - sprint planning meeting
+9 hrs - outage response meeting
+1 hr - follow up plot making
+
+8/29
+2 hrs - figeting with DVR plots for shamil & refactoring in preperation for automation
+1 hr - guide and latency meeting
+2 hrs - refactoring DVR plots for automation
+2 hrs - making more plots for stitcher balancing
+
+8/30
+5 hrs - prepared ses data for stitcher balancing for all markets and extra detail for NY maintenence
+3 hrs - updated and prepared Zodiac AM data histograms for DVR issues
+1 hr - listened into bridge for stitcher outage
+1 hr - mop approval meeting 
+
+8/31
+4 hrs - making updated plots for stitcher balancing with special info on NY
+1 hr - retrospective
+1 hr - ML talk with Devin, Shamil, Alex
+1 hr - discussions 
+
+-----------------------------------
+
+Plans for this week
+
+continue training & SME expansion (ongoing & forever)
+respond to / listen in on outages that i am aware of 
+develop plans for our machine learning initiative
+
+assess data sources as ingest into ML algorithms

@@ -1,0 +1,1 @@
+curl -s http://98.9.230.155:80/api/v1/csv/devices/

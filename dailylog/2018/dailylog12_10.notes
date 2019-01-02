@@ -1,0 +1,42 @@
+
+Last Week's Goals
+
+
+
+-----------------------------------
+
+Status Update: 
+
+12/10
+3 hrs - misc discussions, standup, follow up on outages from weekend 
+5 hrs - parsing from kafka & putting back into kafka
+
+12/11
+1 hr - morning meeting
+1 hr - all hands meeting 
+3 hrs - reno connectivity and pulling logs from reno stitcher for hung html5client processes (SVAV27)
+3 hrs - CSM-Stitcher connectivity
+2 hrs - kafka comms 
+
+12/12
+1 hr - standup and misc discussions on spectrum self healing
+3 hrs - design discussions with dave
+5 hrs - parsing stitcher logs through kafka feed
+
+12/13
+1 hr - standup, one on one with john, other misc discussions
+7 hrs - adapting python to reading kafka stream
+
+12/14
+5 hrs - netflix outage TWCCA, TWCTX
+1 hr - follow up on last nights outage
+1 hr - retrospective
+1 hr - misc discussions 
+
+-----------------------------------
+
+Plans for this week
+
+
+
+

@@ -1,0 +1,70 @@
+To find stale sessions go to wrk01
+
+ssh wrk01pvdcco.pvdc.co.charter.com
+
+ansible twcsc.spdc.sc-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcsc-vca.txt
+
+Stale sessions have 100% CPU usage and long time running
+
+
+
+then to clip the logs go to stitcher 
+
+bschoenrock@vca227sldcmo ~]$ grep '\[23297\]' /var/log/cloudtv.log* > ~/sldcmo_vca227_23297_clipped_cloudtv.log
+[bschoenrock@vca227sldcmo ~]$ grep '\[23297\]' /var/log/cloudtv-app* > ~/sldcmo_vca227_23297_clipped_cloudtvapp.log
+
+
+
+list stale sessions on stitcher - 
+ps -eo start,pid,etime,cmd,size | grep -i html5client | grep -v "^[0-9]"
+
+last line in logs for a process
+for hid in `ps -eo start,pid,etime,cmd,size | grep -i html5client | grep -v "^[0-9]" | awk '{print $3}'`; do cat /var/log/cloudtv.log.1 | grep hid=\"$hid\" | tail -1; done
+
+
+
+
+
+tell what AV version is running
+cat /opt/ActiveVideo_VERSION.txt
+
+list of ansible commands for AV2.11 markets
+
+
+ansible twcny.sydc.ny-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcny.sydc-vca.txt
+
+ansible twcsc.spdc.sc-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcsc-vca.txt
+
+ansible sldcla.sldc.la-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a sldcla-vca.txt
+
+ansible slotca.pldc.or-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a slotca-vca.txt
+
+ansible twcny.nydc.ny-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcny.nydc-vca.txt
+
+ansible nvdctn.nvdc.tn-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a nvdctn-vca.txt
+
+ansible twcca.ladc.ca-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcca-vca.txt
+
+ansible bhnca.ladc.ca-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnca-vca.txt
+
+ansible ladcca.ladc.ca-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a ladcca-vca.txt
+
+ansible twchi.midc.hi-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twchi-vca.txt
+
+ansible bhnfl.tpdc.fl-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnfl-vca.txt
+
+ansible twctx.dldc.tx-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twctx-vca.txt
+
+ansible dldctx.dldc.tx-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a dldctx-vca.txt
+
+ansible twcoh.codc.oh-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcoh-vca.txt
+
+ansible bhnoh.codc.oh-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnoh-vca.txt
+
+ansible bodcma.bodc.ma-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bodcma-vca.txt
+
+ansible bhnal.bhdc.al-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnal-vca.txt
+
+ansible bhdcal.bhdc.al-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhdcal-vca.txt
+
+ansible blngmt.pvdc.co-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a blngmt-vca.txt

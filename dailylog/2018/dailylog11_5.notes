@@ -1,0 +1,48 @@
+
+
+Last Week's Overview
+
+follow up on log rotations with SST and PING
+still TX apparently
+get back to working on ML if possible
+
+-----------------------------------
+
+Status Update: 
+
+11/5
+4 hr - discussing & meetings on log rotations with ping & SST
+1 hr - follow up on misc email and TX
+2 hrs - working session with AV on TX CSM communications
+1 hr - processing CSM session data
+
+11/6
+2 hrs - TX working session with AV
+5 hrs - pulling more logs from tx after meeting with AV & uploading to AV ftp site
+1 hr - processing CSM session data
+1 hr - discussions about TX networking
+
+11/7
+1 hr - TX working session with AV
+4 hrs - uploading requested kestrel and collector logs to AV FTP 
+1 hr - T4 support plan meeting
+1 hr - customer focused issues meeting
+1 hr - ensuring access to sword for channel lineup validation
+3 hrs - scalar deployment validation (night)
+
+11/8
+3 hrs - AV working meetings
+1 hr - h2o io presentation
+2 hrs - researching vm connectivity 
+1 hr - follow up talk with bill for TX
+
+11/9
+4 hrs - AV working meeting/CSM changeover
+
+-----------------------------------
+
+Plans for this week
+
+TX if needed, it looks like we've fixed it through the datastore migration
+backlog grooming & sprint planning discussions
+ML work in some form 
