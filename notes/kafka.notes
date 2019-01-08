@@ -44,6 +44,8 @@ cd /home/bschoenrock/Sandbox/kafka/kafka_2.11-2.1.0
 
 /home/bschoenrock/Sandbox/kafka/kafka_2.11-2.1.0/bin/kafka-console-consumer.sh --bootstrap-server 98.8.170.176:8080 --topic bradsTestTopic2 
 
+/home/bschoenrock/Sandbox/kafka/kafka_2.11-2.1.0/bin/kafka-console-consumer.sh --bootstrap-server 98.8.170.176:8080 --topic reno_ssh_logs2
+
 
 
 
