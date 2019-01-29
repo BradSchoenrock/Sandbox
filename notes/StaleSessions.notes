@@ -30,7 +30,6 @@ cat /opt/ActiveVideo_VERSION.txt
 
 list of ansible commands for AV2.11 markets
 
-
 ansible twcny.sydc.ny-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcny.sydc-vca.txt
 
 ansible twcsc.spdc.sc-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcsc-vca.txt
@@ -68,3 +67,94 @@ ansible bhnal.bhdc.al-stitchers -m shell -a "ps -C html5client -o start,pid,etim
 ansible bhdcal.bhdc.al-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhdcal-vca.txt
 
 ansible blngmt.pvdc.co-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a blngmt-vca.txt
+
+
+
+
+
+
+
+
+
+
+
+commands for all markets 
+
+ansible bhnal.bhdc.al-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnal-vca.txt
+ansible twcoh.codc.oh-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcoh-vca.txt
+ansible twcny.nydc.ny-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcny.nydc-vca.txt
+ansible twcny.sydc.ny-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcny.sydc-vca.txt
+ansible twcsc.spdc.sc-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcsc-vca.txt
+ansible bhnfl.tpdc.fl-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnfl-vca.txt
+ansible bhnoh.codc.oh-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnoh-vca.txt
+ansible twctx.dldc.tx-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twctx-vca.txt
+ansible twcca.ladc.ca-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twcca-vca.txt
+ansible twchi.midc.hi-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a twchi-vca.txt
+ansible bhnca.ladc.ca-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhnca-vca.txt
+
+ansible bhdcal.bhdc.al-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bhdcal-vca.txt
+ansible bodcma.bodc.ma-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a bodcma-vca.txt
+ansible knwdmi.kndw.mi-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a knwdmi-vca.txt
+ansible nvdctn.nvdc.tn-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a nvdctn-vca.txt
+ansible sldcla.sldc.la-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a sldcla-vca.txt
+ansible spdcsc.spdc.sc-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a spdcsc-vca.txt
+ansible sldcmo.sldc.mo-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a sldcmo-vca.txt
+ansible mddcwi.mddc.wi-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a mddcwi-vca.txt
+ansible blngmt.pvdc.co-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a blngmt-vca.txt
+ansible dldctx.dldc.tx-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a dldctx-vca.txt
+ansible ladcca.ladc.ca-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a ladcca-vca.txt
+ansible edprmn.edpr.mn-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a edprmn-vca.txt
+ansible pldcor.pldc.or-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a pldcor-vca.txt
+ansible renonv.reno.nv-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a renonv-vca.txt
+ansible slotca.pldc.or-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size" | tee -a slotca-vca.txt
+
+
+
+
+
+
+both ps and snmpget - 
+
+ansible renonv.reno.nv-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,cputime,rss,size" | tee -a renonv-vca_ps.txt
+
+ansible renonv.reno.nv-stitchers -m shell -a "snmpget -v2c -c public 127.0.0.1 .1.3.6.1.4.1.1192.1.1.1.4.0 .1.3.6.1.4.1.1192.1.1.1.9.0" | tee -a renonv-vca_snmp.txt
+
+
+in 
+
+~/ansible0124/
+fetch script exists 
+
+
+bash fetch.sh \* all
+
+bash fetch.sh bhdcal.bhdc.al bhdcal
+bash fetch.sh bhnca.ladc.ca bhnca
+bash fetch.sh bhnoh.codc.oh bhnoh
+bash fetch.sh bhnal.bhdc.al bhnal
+bash fetch.sh blngmt.pvdc.co blngmt
+bash fetch.sh bodcma.bodc.ma bodcma
+bash fetch.sh dldctx.dldc.tx dldctx
+bash fetch.sh edprmn.edpr.mn edprmn
+bash fetch.sh knwdmi.knwd.mi knwdmi
+bash fetch.sh ladcca.ladc.ca ladcca
+bash fetch.sh mddcwi.mddc.wi mddcwi
+bash fetch.sh nvdctn.nvdc.tn nvdctn
+bash fetch.sh twcny.nydc.ny twcny_nydc
+bash fetch.sh pldcor.pldc.or pldcor
+bash fetch.sh renonv.reno.nv renonv
+bash fetch.sh sldcca.sldc.ca sldcca
+bash fetch.sh sldcmo.sldc.mo sldcmo
+bash fetch.sh slotca.pldc.or slotca
+bash fetch.sh spdcsc.spdc.sc spdcsc
+bash fetch.sh bhnfl.tpdc.fl bhnfl
+bash fetch.sh twcca.ladc.ca twcca
+bash fetch.sh twchi.midc.hi twchi
+bash fetch.sh twcny.sydc.ny twcny_sydc
+bash fetch.sh twcoh.codc.oh twcoh
+bash fetch.sh twcsc.spdc.sc twcsc
+bash fetch.sh twctx.dldc.tx twctx
+
+
+
+

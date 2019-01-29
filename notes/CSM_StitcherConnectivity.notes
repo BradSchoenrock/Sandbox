@@ -9,3 +9,7 @@ to debug
 netstat -ant | grep 16668[\ ]*SYN_SENT
 
 
+
+to reload CSM config - 
+
+/opt/csm/csmconfig --host=69.205.118.71 --all
