@@ -13,3 +13,17 @@ netstat -ant | grep 16668[\ ]*SYN_SENT
 to reload CSM config - 
 
 /opt/csm/csmconfig --host=69.205.118.71 --all
+
+
+Other Misc CSM commands. 
+
+service csm status
+
+h5restartall
+
+/opt/csm/csmconfig --host=98.12.198.71 --all
+
+service csm stop
+ps ax|grep csm
+service csm start
+​

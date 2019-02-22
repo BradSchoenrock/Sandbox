@@ -1,0 +1,297 @@
+
+
+Major points -
+Blockers on html5client hung sessions, need a MOP or an RCA worked out and in hand for us to proceed on that.
+html5client session size is moving very slowly, probably expected. It was discovered that they had this brought to their attention July 2017 as a P0 and ignored it then.
+Reallocation analysis & planning is going well, making good progress.
+On call summary, 5 escalations, ~ 20 hrs spent on phone. Slightly above average week compared to VOES on call history. We, as a group with John's group, should have discussions about how we handle being engaged. NOC's expectations seem to be that both teams on call need to be on the call for problems relating to either of our responsibilities. Also we/you were engaged for that T3 issue that shouldn't have come to us. We still have kinks to work out with the on call escalations.
+
+------------------------------
+
+Deployments/Projects -
+Self Healing Spectrum Guide
+html5client session size
+html5client hung sessions
+Stitcher reallocation analysis
+Channel Tune Error Analysis
+Scalar reallocation analysis
+
+------------------------------
+
+Self Healing Spectrum Guide
+
+Project Description
+Using machine learning techniques to scan application and server logs to determine customer experience and take corrective action automatically.
+
+Target Date (date, TBD, complete, ongoing)
+TBD - would need time to work on this with Dave Ryll to determine.
+
+Risks/Issues/Gating Factors/Dependencies
+Blocker is time & being given time to work on the project while managing other expectations on my time.
+
+Recent Activity
+N/A
+
+Meetings
+N/A
+
+Training
+N/A
+
+Tools/Scripts
+Link to Gitlab repo -
+https://git01pvdcco.pvdc.co.charter.com/voes-dev/MachineLearningInitiative
+
+Miscellaneous
+Link to Jira epic -
+https://jira.charter.com/browse/VIDOPSTECH-8127
+
+This project won't make progress unless i'm working on it with Dave Ryll. No one else here has the experience needed nor demonstrated the vision of what is needed to undertake this task to completion.
+https://jira.charter.com/browse/VIDOPSTECH-8143
+
+------------------------------
+
+html5client session size
+
+Project Description
+The html5client process associated with customer sessions averages over 1GB. It was expected to be 200 MB.
+
+Target Date (date, TBD, complete, ongoing)
+ongoing, need resolution asap. This will resolve itself one way or the other in ~6-12 months. Either software teams come through with a fix, we procure more hardware, or we shut down markets. Some stalling can be done at the cost of customer experience in some ways on our end, but this is a problem of scale-ability & is an inevitability​ without software help. 
+
+Risks/Issues/Gating Factors/Dependencies
+We have passed this off to AV/FE/SEOps for analysis and fix.
+They have known about the issue since July of 2017 and no fix has come yet.
+https://jira.charter.com/browse/SPECIPDOCS-588?focusedCommentId=1583988&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1583988
+
+Recent Activity
+In depth analysis of session size, CPU usage, duration of session, etc... based on data collected from reno pre AV2.11 deployment for replication purposes in lab
+
+Meetings
+
+Training
+N/A
+
+Tools/Scripts
+Analysis with Linux utilities & Python.
+
+Miscellaneous
+Jira Tickets -
+https://jira.charter.com/browse/SPECIPDOCS-588
+https://jira.charter.com/browse/SGUIDE-10829
+
+------------------------------
+
+html5client hung sessions
+
+Project Description
+html5client can under unknown circumstances hang and never quit. They will run for months without exiting, using 100% CPU and GBs of memory.
+
+Target Date (date, TBD, complete, ongoing)
+ASAP, it has been ongoing for months.
+
+Risks/Issues/Gating Factors/Dependencies
+We need to get the stale session killer through lab testing, a mop written, and deployed.
+
+Recent Activity
+N/A on this until we get a MOP to deploy or fixes from SE
+
+Meetings
+Customer Impacting Issues meeting.
+
+Training
+N/A
+
+Tools/Scripts
+Analysis with Linux utilities & Python.
+
+Miscellaneous
+Jira Ticket -
+https://jira.charter.com/browse/SGUIDE-10830
+https://jira.charter.com/browse/SGUIDE-10915
+
+------------------------------
+
+Stitcher Procurement analysis
+
+Project Description
+Given Session size has been expanded, an analysis of stitcher capacity was needed. This determined what our need for stitchers is market by market. If we assume no fix is forthcoming then we need a contingency plan.
+
+Target Date (date, TBD, complete, ongoing)
+ASAP, complete for now. The target date & details of what is needed keep changing and causing me to re-assess need.
+
+Risks/Issues/Gating Factors/Dependencies
+We need Kyle Dreas to provide costs to get procurement approved or not. Alternate plans re-allocating found stitchers are being proposed to Kyle this afternoon (2/13) 
+
+Recent Activity
+Analysis of how many stitchers to reallocate and where. Developing plan with APO CBO etc... 
+
+Meetings
+Several meetings with Gagan, Michelle, Alan, Kyle, Walden, Kristen, Colt, Greg, Kristi 
+
+Training
+N/A
+
+Tools/Scripts
+Analysis with Linux utilities, Python, & excel.
+
+Miscellaneous
+Re-allocation of found resources can get us through Q2, problems still exist if we don't get a software solution. 
+
+------------------------------
+
+Channel Tune Error Analysis
+
+Project Description
+Product claims channel tune errors are in the 10-15% range, that doesn't match AM data. I have been asked to assess the Product Data. 
+
+Target Date (date, TBD, complete, ongoing)
+ongoing, Issue mostly handed off to David Laz. 
+
+Risks/Issues/Gating Factors/Dependencies
+Product Inteligence is working on updating their metrics. ETA unknown, limited manpower to devote to the issue. 
+
+Recent Activity
+N/A
+
+Meetings
+Meeting with David L. to discuss the issues. 
+
+Training
+Self Teach myself Tableau
+
+Tools/Scripts
+Tableau
+
+Miscellaneous
+
+------------------------------
+------------------------------
+
+Escalations (anything not part of our deployment/maintenance schedule)
+VOD - Spartansburg
+
+TSB in NY INC000002368803
+TSB in NY INC000002368077
+TSB in NY INC000002372942
+New installs LTWC - CSG INC000002357370
+No VOD Guide THIBODAUX LA INC000002376084
+
+------------------------------
+
+TSB in NY INC000002368803
+
+Parent JIRA / CRQ / INC ticket
+INC000002368803
+
+Was this change related?
+No. 
+
+Was this self-inflicted?
+No.
+
+Description of what was done to remedy/resolve?
+Config was not loaded in CSM, it was assumed that was the problem & ISP and NOC confirmed issue was resolved, test boxes began working, call volume dropped, etc...
+
+Future steps (ie, closed – no further action needed, pending another groups actions, etc)
+See next outages
+
+------------------------------
+
+TSB in NY INC000002368077
+
+Parent JIRA / CRQ / INC ticket
+INC000002368077
+
+Was this change related?
+No. 
+
+Was this self-inflicted?
+No.
+
+Description of what was done to remedy/resolve?
+Incremented version of profile.zdb on TSB, test boxes began working, call volume dropped, etc...
+
+Future steps (ie, closed – no further action needed, pending another groups actions, etc)
+See next outage
+
+------------------------------
+
+TSB in NY INC000002372942
+
+Parent JIRA / CRQ / INC ticket
+INC000002372942
+
+Was this change related?
+No. 
+
+Was this self-inflicted?
+No.
+
+Description of what was done to remedy/resolve?
+Incremented version of profile.zdb on TSB, Mind Control used to manually set faulty field in profile.zdb, test boxes began working, call volume dropped, manual check of TMC boxes by us, opened ticket with zodiac about bug in TSB download. 
+
+Future steps (ie, closed – no further action needed, pending another groups actions, etc)
+Follow up with zodiac by John's team. 
+
+------------------------------
+
+New installs LTWC - CSG INC000002357370
+
+Parent JIRA / CRQ / INC ticket
+INC000002357370
+
+Was this change related?
+No. 
+
+Was this self-inflicted?
+No.
+
+Description of what was done to remedy/resolve?
+Vendor bug with Humax, resolved itself by waiting, or resolved by clearing cache, or tech in field gave a different STB model. 
+
+Future steps (ie, closed – no further action needed, pending another groups actions, etc)
+Closed. Billing Operations to follow up on entitlements interaction with new account set up. VSC/Customer Care for fixes to instalation process for techs to work around vendor bug. 
+
+------------------------------
+
+No VOD Guide THIBODAUX LA INC000002376084
+
+Parent JIRA / CRQ / INC ticket
+INC000002357370
+
+Was this change related?
+No. 
+
+Was this self-inflicted?
+No.
+
+Description of what was done to remedy/resolve?
+The NSG-Pro failed over from primary to secondary and harmonic failed the card back over. 
+
+Future steps (ie, closed – no further action needed, pending another groups actions, etc)
+Closed. Harmonic needs to investigate configuration of backup NSG-Pro to understand why the failover caused an outage. Backup NSG-Pro needs to be able to function in case of future failover. 
+
+------------------------------
+
+Goals for Next Week
+Continue to push lab for results for stale session killer & get SE to start working on MOP for deployment.
+Keep momentum on re-allocation of stitcher resources going with kyle & walden. 
+Begin analysis of Scalar Capacity & feasability of using old stitchers to replace scalars & feasability of using those scalars to suplement stitcher pool in other markets.  
+
+Meetings
+Standup,
+Stitcher Network Bandwidth - ReIP requirements working with CBO 
+Stitcher Capacity Mitigation review with Kristin to prep her for meetings with execs. 
+
+Training
+Linux Academy
+
+Tools/Scripts
+Whatever is needed.
+
+Miscellaneous
+
+------------------------------
+
+

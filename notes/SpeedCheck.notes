@@ -1,0 +1,8 @@
+
+
+to check open ports and speeds - 
+
+for i in $(netstat -i | cut -f1 -d" " | tail -n+3) ; do echo "$i: $(sudo ethtool "$i" | grep Speed | sed 's/Speed://g')" ; done
+
+
+

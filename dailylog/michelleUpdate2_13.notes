@@ -1,0 +1,267 @@
+
+
+
+------------------------------
+
+Deployments/Projects -
+Self Healing Spectrum Guide
+2.11 deployment - Reno
+html5client session size
+html5client hung sessions
+Stitcher Procurement analysis
+Channel Tune Error Analysis
+Effie Cache migrations
+
+------------------------------
+
+Self Healing Spectrum Guide
+
+Project Description
+Using machine learning techniques to scan application and server logs to determine customer experience and take corrective action automatically.
+
+Target Date (date, TBD, complete, ongoing)
+TBD - would need time to work on this with Dave Ryll to determine.
+
+Risks/Issues/Gating Factors/Dependencies
+Blocker is time & being given time to work on the project while managing other expectations on my time.
+
+Recent Activity
+N/A
+
+Meetings
+N/A
+
+Training
+N/A
+
+Tools/Scripts
+Link to Gitlab repo -
+https://git01pvdcco.pvdc.co.charter.com/voes-dev/MachineLearningInitiative
+
+Miscellaneous
+Link to Jira epic -
+https://jira.charter.com/browse/VIDOPSTECH-8127
+
+This project won't make progress unless i'm working on it with Dave Ryll. No one else here has the experience needed nor demonstrated the vision of what is needed to undertake this task to completion.
+https://jira.charter.com/browse/VIDOPSTECH-8143
+
+------------------------------
+
+2.11 deployment - St. Louis
+
+Project Description
+Get St. Louis onto AV 2.11
+
+Target Date (date, TBD, complete, ongoing)
+2/13-2/14 deployment (complete)
+
+Risks/Issues/Gating Factors/Dependencies
+getting prep work done during daytime
+
+Recent Activity
+I assisted in ensuring capacity would be ok for the plan of action
+
+Meetings
+N/A
+
+Training
+N/A
+
+Tools/Scripts
+Stale session killer, spacewalk, UCS Manager, KVM console, chef
+
+Miscellaneous
+Hope it goes smoothly. I wont be on the nighttime deployment. 
+
+------------------------------
+
+html5client session size
+
+Project Description
+The html5client process associated with customer sessions averages over 1GB. It was expected to be 200 MB.
+
+Target Date (date, TBD, complete, ongoing)
+ongoing, need resolution asap. This will resolve itself one way or the other in ~6-12 months. Either software teams come through with a fix, we procure more hardware, or we shut down markets. Some stalling can be done at the cost of customer experience in some ways on our end, but this is a problem of scale-ability & is an inevitability​ without software help. 
+
+Risks/Issues/Gating Factors/Dependencies
+We have passed this off to AV/FE/SEOps for analysis and fix.
+They have known about the issue since July of 2017 and no fix has come yet.
+https://jira.charter.com/browse/SPECIPDOCS-588?focusedCommentId=1583988&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1583988
+
+Recent Activity
+Assessment of "fix" proposals by Jeff W. 
+
+Meetings
+Customer Impacting Issues meeting.
+
+Training
+N/A
+
+Tools/Scripts
+Analysis with Linux utilities & Python.
+
+Miscellaneous
+Jira Tickets -
+https://jira.charter.com/browse/SPECIPDOCS-588
+https://jira.charter.com/browse/SGUIDE-10829
+
+------------------------------
+
+html5client hung sessions
+
+Project Description
+html5client can under unknown circumstances hang and never quit. They will run for months without exiting, using 100% CPU and GBs of memory.
+
+Target Date (date, TBD, complete, ongoing)
+ASAP, it has been ongoing for months.
+
+Risks/Issues/Gating Factors/Dependencies
+We need to get the stale session killer through lab testing, a mop written, and deployed.
+
+Recent Activity
+SEOps assessment of RCA is an interaction with session attempted killing & hung API calls to microservices.
+
+Meetings
+Customer Impacting Issues meeting.
+
+Training
+N/A
+
+Tools/Scripts
+Analysis with Linux utilities & Python.
+
+Miscellaneous
+Jira Ticket -
+https://jira.charter.com/browse/SGUIDE-10830
+https://jira.charter.com/browse/SGUIDE-10915
+
+------------------------------
+
+Stitcher Procurement analysis
+
+Project Description
+Given Session size has been expanded, an analysis of stitcher capacity was needed. This determined what our need for stitchers is market by market. If we assume no fix is forthcoming then we need a contingency plan.
+
+Target Date (date, TBD, complete, ongoing)
+ASAP, complete for now. The target date & details of what is needed keep changing and causing me to re-assess need.
+
+Risks/Issues/Gating Factors/Dependencies
+We need Kyle Dreas to provide costs to get procurement approved or not. Alternate plans re-allocating found stitchers are being proposed to Kyle this afternoon (2/13) 
+
+Recent Activity
+Analysis to reallocate found stitchers in order to replace stitchers in markets which are over-capacity now.
+
+Meetings
+Several meetings with Gagan, Michelle, Alan, Kyle, Walden, Kristen
+
+Training
+N/A
+
+Tools/Scripts
+Analysis with Linux utilities, Python, & excel.
+
+Miscellaneous
+Re-allocation of found resources can get us through Q2, problems still exist if we don't get a software solution. 
+
+------------------------------
+
+Channel Tune Error Analysis
+
+Project Description
+Product claims channel tune errors are in the 10-15% range, that doesn't match AM data. I have been asked to assess the Product Data. 
+
+Target Date (date, TBD, complete, ongoing)
+ongoing, Issue mostly handed off to David Laz. 
+
+Risks/Issues/Gating Factors/Dependencies
+Product Inteligence is working on updating their metrics. ETA unknown, limited manpower to devote to the issue. 
+
+Recent Activity
+Assessment of Product Data shows faulty metrics in place. Discussion with Product Inteligence was productive toward giving execs information that is more accurate to the customer experience. 
+
+Meetings
+Meeting with David L. to discuss the issues. 
+
+Training
+Self Teach myself Tableau
+
+Tools/Scripts
+Tableau
+
+Miscellaneous
+
+------------------------------
+
+Effie Cache migrations
+
+Project Description
+Effie cache would be a replacement for datamart for API calls
+
+Target Date (date, TBD, complete, ongoing)
+RR16, RR17, RR18 for different phases of the project. 
+
+Risks/Issues/Gating Factors/Dependencies
+N/A
+
+Recent Activity
+Attending meetings with David M. to assess state of project. 
+
+Meetings
+SEOps VO Allignment. 
+
+Training
+N/A
+
+Tools/Scripts
+Effie, unknown
+
+Miscellaneous
+This looks like a project David M. team has under control. My participation will be as a passive observer. 
+
+------------------------------
+
+Escalations (anything not part of our deployment/maintenance schedule)
+VOD - Spartansburg
+
+Parent JIRA / CRQ / INC ticket
+INC000002365921
+
+Was this change related?
+Yes, not by us. 
+
+Was this self-inflicted?
+No.
+
+Description of what was done to remedy/resolve?
+SST & VSC-Systems diagnosed the issue, Datamart configuration change was needed from Datamart team. 
+
+Future steps (ie, closed – no further action needed, pending another groups actions, etc)
+They are verifying the last steps as i write this (checking MDMS, verifying functionality, etc...). Almost closed. 
+
+------------------------------
+
+Goals for Next Week
+Push lab for results for stale session killer & get SE to start working on MOP for deployment.
+Push RCA & fixes discovered for stale sessions. 
+Get re-allocation of stitcher resources going with kyle & walden. 
+On call duties. 
+
+Meetings
+Meeting with David M. for effie cache.
+1-on-1 michelle,
+SGUI architectural deployment design meeting,
+Spectrum all hands,
+Standup,
+Customer Impacting Issues meeting,
+
+Training
+Linux Academy
+
+Tools/Scripts
+Whatever is needed.
+
+Miscellaneous
+
+------------------------------
+
+

@@ -8,6 +8,21 @@ Stale sessions have 100% CPU usage and long time running
 
 
 
+DANGER ZONE 
+sudo kill -9 `ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size | grep -e Jan -e Dec -e Nov -e Oct -e Sep -e Aug -e Jul -e Jun | cut -d' ' -f1,5`
+ansible *-stitchers -m shell -a "sudo kill -9 `ps -C html5client -o start,pid,etime,cmd,pcpu,rss,size | grep -e Jan -e Dec -e Nov -e Oct -e Sep -e Aug -e Jul -e Jun | cut -d' ' -f1,5`" 
+
+
+
+both ps and snmpget - 
+
+ansible renonv.reno.nv-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,cputime,rss,size" | tee -a renonv-vca_ps.txt
+
+ansible renonv.reno.nv-stitchers -m shell -a "snmpget -v2c -c public 127.0.0.1 .1.3.6.1.4.1.1192.1.1.1.4.0 .1.3.6.1.4.1.1192.1.1.1.9.0" | tee -a renonv-vca_snmp.txt
+
+
+
+
 then to clip the logs go to stitcher 
 
 bschoenrock@vca227sldcmo ~]$ grep '\[23297\]' /var/log/cloudtv.log* > ~/sldcmo_vca227_23297_clipped_cloudtv.log
@@ -111,13 +126,6 @@ ansible slotca.pldc.or-stitchers -m shell -a "ps -C html5client -o start,pid,eti
 
 
 
-
-
-both ps and snmpget - 
-
-ansible renonv.reno.nv-stitchers -m shell -a "ps -C html5client -o start,pid,etime,cmd,pcpu,cputime,rss,size" | tee -a renonv-vca_ps.txt
-
-ansible renonv.reno.nv-stitchers -m shell -a "snmpget -v2c -c public 127.0.0.1 .1.3.6.1.4.1.1192.1.1.1.4.0 .1.3.6.1.4.1.1192.1.1.1.9.0" | tee -a renonv-vca_snmp.txt
 
 
 in 

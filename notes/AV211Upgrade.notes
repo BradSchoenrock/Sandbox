@@ -1,0 +1,15 @@
+
+
+silver
+JjqG3aM?Toe&47
+
+
+ssh silver@172.26.172.5
+sudo chef-client -E renonv -r recipe[chtr_common]
+sudo shutdown -r now
+
+
+ssh 172.26.172.5
+sudo chef-client -E renonv -r recipe[chtr_stitcher],recipe[chtr_nrpe],recipe[chtr_logstash]
+
+
