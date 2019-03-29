@@ -1,0 +1,55 @@
+
+Last Week's Goals
+
+
+
+-----------------------------------
+
+Status Update: 
+
+3/4
+2 hrs - learning UCS chasis, configurations, etc... finding spdcsc stitchers
+2 hrs - stale sessions in spdcsc, reporting in jira ticket
+2 hrs - MOP creation with tyson, removing stitchers from pool
+3 hrs - grabbing mac addresses of spdcsc stitchers that are off through KVM
+
+3/5
+1 hr - stitcher reallocation meeting with CBO management
+1 hr - AV2.11 meeting
+4 hrs - building spacewalk server with dave U. 
+1 hr - follow up on lab tests for stitcher replacements 
+1 hr - checking icinga alarms
+
+3/6
+2 hrs - meeting with Greg & Harvinder on stitcher virtualization & providing them insights into stitcher functions
+3 hrs - pulling stitchers from TWC pool in TX & CA
+1 hr - MOP template review
+1 hr - reviewing spec-guide alarms room 
+1 hr - prepping CSM topology files for tonight's MW
+
+3/6-3/7 Maint Window
+1 hr - topology change TX
+1 hr - topology change CA
+2 hrs - reviewing teja's automation 
+1 hr - topology change OR
+2 hrs - monitoring Icinga for alarms
+1 hr - AV2.11 upgrade SC
+
+3/7
+1 hr - meeting stitcher reallocation
+1 hr - stale session tracking
+
+3/8
+1 hr - discussion with Dave R. about performance analysis
+1 hr - checking on degraded stitchers 
+1 hr - evaluating hung sessions enterprise wide 
+6 hrs - building stitchers for spdcsc
+
+
+-----------------------------------
+
+Plans for this week
+
+
+
+

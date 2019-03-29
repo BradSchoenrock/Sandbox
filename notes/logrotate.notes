@@ -1,0 +1,113 @@
+
+
+
+logrotate -vf /etc/logrotate.d/cloudtv 
+
+
+
+par45 & par 46 sldcmo have changes in 
+
+
+vi logrotate.conf
+
+weekly to daily
+
+4 weeks to 3 (rotate 21)
+
+dateformat -%Y%m%d-%s
+
+
+
+vi logrotate.d
+
+weekly to daily
+
+rotate 21
+
+dateformat -%Y%m%d-%s
+
+
+
+
+
+
+
+
+
+
+
+
+
+random ansible from scratch buffer
+
+
+
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo cp /etc/logrotate.d/cloudtv.bak /etc/logrotate.d/cloudtv" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo cp /etc/logrotate.conf.bak /etc/logrotate.conf" | tee -a out.txt
+
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo cp /etc/logrotate.d/cloudtv /etc/logrotate.d/cloudtv.bak" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo cp /etc/logrotate.conf /etc/logrotate.conf.bak" | tee -a out.txt
+
+
+
+
+
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/weekly/daily/g' /etc/logrotate.d/cloudtv" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/rotate 7/rotate 21/g' /etc/logrotate.d/cloudtv" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i '/rotate 21/a \ \ dateext\n  dateformat -%Y%m%d-%s' /etc/logrotate.d/cloudtv" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/#rotate 4/rotate 4/g' /etc/logrotate.conf" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/#create/create/g' /etc/logrotate.conf" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i '/^create/a # specify format to include seconds\ndateformat -%Y%m%d-%s' /etc/logrotate.conf" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i '/\/var\/log\/btmp {/i \/var\/log\/cloudtv*.log {\n  sharedscripts\n  daily\n  size 1G\n  missingok\n  rotate 21\n  dateext\n  dateformat -%Y%m%d-%s\n  compress\n  delaycompress\n  postrotate\n  service rsyslog restart || true\n  endscript\n}\n' /etc/logrotate.conf" | tee -a out.txt
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo mv /etc/cron.daily/logrotate /etc/cron.hourly/logrotate" | tee -a out.txt
+
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i '/sharedscripts/a \ \ daily' /etc/logrotate.d/cloudtv" | tee -a out.txt
+ansible sldcmo.sldc.mo-scalernodes -b -m shell -a "sudo sed -i '/sharedscripts/a \ \ daily' /etc/logrotate.d/cloudtv" | tee -a out.txt
+
+
+
+
+
+
+
+
+
+sed -i 's/#weekly/weekly/g' /etc/logrotate.conf
+sed -i 's/#rotate 4/rotate 4/g' /etc/logrotate.conf
+sed -i 's/#create/create/g' /etc/logrotate.conf
+sed -i 's/#dateext/dateext/g' /etc/logrotate.conf
+
+
+
+
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/#weekly/weekly/g' /etc/logrotate.conf"
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/#rotate 4/rotate 4/g' /etc/logrotate.conf"
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/#create/create/g' /etc/logrotate.conf"
+ansible pvdcco.pvdc.co-scalernodes -b -m shell -a "sudo sed -i 's/#dateext/dateext/g' /etc/logrotate.conf"
+
+
+
+ansible sldcmo.sldc.mo-scalernodes -b -m shell -a "sudo sed -i 's/#weekly/weekly/g' /etc/logrotate.conf"
+ansible sldcmo.sldc.mo-scalernodes -b -m shell -a "sudo sed -i 's/#rotate 4/rotate 4/g' /etc/logrotate.conf"
+ansible sldcmo.sldc.mo-scalernodes -b -m shell -a "sudo sed -i 's/#create/create/g' /etc/logrotate.conf"
+ansible sldcmo.sldc.mo-scalernodes -b -m shell -a "sudo sed -i 's/#dateext/dateext/g' /etc/logrotate.conf"
+
+
+
+ 1127  Mar 27 - 22:58:02  ansible sldcmo.sldc.mo-scalernodes -b -m shell -a "sudo sed -i '/sharedscripts/a \ \ daily' /etc/logrotate.d/cloudtv" | tee -a out.txt
+
+
+

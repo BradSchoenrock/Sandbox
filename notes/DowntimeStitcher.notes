@@ -1,0 +1,18 @@
+
+ssh wrk01pvdcco.pvdc.co.charter.com
+
+downtime -f "vca211twcoh.codc.oh.charter.com" -m set -c "downtiming stitcher for APO work"
+downtime -f "vca193twcoh.codc.oh.charter.com" -m set -c "downtiming stitcher for APO work"
+downtime -f "vca190twcoh.codc.oh.charter.com" -m set -c "downtiming stitcher for APO work"
+downtime -f "vca175twcoh.codc.oh.charter.com" -m set -c "downtiming stitcher for APO work"
+downtime -f "vca172twcoh.codc.oh.charter.com" -m set -c "downtiming stitcher for APO work"
+downtime -f "vca157twcoh.codc.oh.charter.com" -m set -c "downtiming stitcher for APO work"
+downtime -f "vca154twcoh.codc.oh.charter.com" -m set -c "downtiming stitcher for APO work"
+
+
+get on stitcher - 
+
+sudo service compositor stop
+
+
+downtime -f "vca050pldcor.pldc.or.charter.com" -m set -c "downtiming stitcher for testing AV2.11 upgrade"
