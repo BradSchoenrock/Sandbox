@@ -1,0 +1,19 @@
+hi there
+
+this is a line
+
+a line with an IP 48.4.123.200
+
+bye
+
+2019-04-09T22:01:31.015112+00:00 INFO transcoder_core[32814]: [video_scale. l:  225] DST WxH: 256x144 PAR: 1:1
+
+
+
+
+
+solution is 
+
+grep -E "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" grepTest.txt
+
+

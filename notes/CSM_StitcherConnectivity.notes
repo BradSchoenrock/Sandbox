@@ -8,6 +8,7 @@ to debug
 
 netstat -ant | grep 16668[\ ]*SYN_SENT
 
+netstat -ant | grep 16668[\ ]*ESTABLISHED | tr -s ' ' | cut -d " " -f 5 | sort
 
 
 to reload CSM config - 

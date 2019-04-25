@@ -1,0 +1,48 @@
+p 
+Last Week's Goals
+
+
+
+-----------------------------------
+
+Status Update: 
+
+4/8
+3 hrs - capacity planning, scalers
+6 hrs - macro blocking
+
+4/9
+2 hrs - capacity planning kickoff meeting prep
+4 hrs - flapping stitchers 
+4 hrs - tracking & uploading logs for memory leak in transcoder_core
+
+4/10
+1 hr - email explaining flapping stitchers again
+1 hr - standup 
+2 hrs - prep for mddcwi lsm timeout change
+3 hrs - prep for twcca cloudtvmib change 
+4 hrs - re-uploading logs for memory leak in transcoder_core
+
+4/10 Maint. Window
+4 hrs - pushing twcca & mddcwi changes 
+
+4/12
+2 hrs - all hands
+2 hrs - prep for kickoff meeting for capacity planning
+2 hrs - answering icinga alarms 
+2 hrs - prep work for ecrqs 
+
+4/12 Maint. Window
+2 hrs - pushing logrotate fix & lsm timeout change to spdcsc, sldcla, renonv, knwdmi
+1 hr - answering icinga alarms 
+
+4/13-4/14 on call
+8 hrs - answering icinga alarms
+
+-----------------------------------
+
+Plans for this week
+
+
+
+

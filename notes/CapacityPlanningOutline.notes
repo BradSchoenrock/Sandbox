@@ -1,0 +1,42 @@
+Rough outline of component capacity reporting, filled out as relevant for component. 
+All considerations should be taken under peak (prime time) load. 
+This is an attempt to be proactive about system performance/health. 
+
+
+
+Introduction to component
+What does it do? 
+How does it scale with customer count/content provided/other growth? 
+how does it interact with adjacent systems that might cause a constraint? 
+Are there any common/known reasons for failure to be addressed (tech debt)?
+
+​Where we stand today (assessed individually on a market/kma/service group level where appropriate) 
+Memory consumption
+Disk space utilization
+Networking usage
+Application performance
+Other known tech debt that will surface in the short term (6 months)
+Plans to address tech debt
+
+Where we will be by eoy 2019
+Memory consumption
+Disk space utilization
+Networking usage
+Application performance
+Expected effects of addressing tech debt
+Other short term mitigation strategies & requirements 
+
+Where we will be by eoy 2020
+​Memory consumption
+Disk space utilization
+Networking usage
+Application performance​
+Long term resolutions & requirements
+
+Outline of mitigation and resolution strategies
+Costs/timelines/steps of mitigation strategies and long term resolutions
+
+Conclusion
+
+
+

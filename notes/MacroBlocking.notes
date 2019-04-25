@@ -1,0 +1,56 @@
+Proceedure to trouble shoot Macroblocking
+
+You need to have the IP of the box that is having the macroblocking issue.  
+
+1. Log into the AMS for that KMA and then mototerm to the box in question. 
+
+mototerm IP_OF_Box
+
+2. get the Mac of the box
+
+pwreg get MacAddress
+
+3. Tail the CSM log for the mac address on all 3 csm's
+
+tail -F /var/log/cloudtv.log | grep -i 000003cd0a69 <--change to your box mac
+
+4. Start guide on the box, and get the Stitcher that the box is current working on, along with the port and ip of the edge device. 
+
+osdiag g
+
+2019-04-08T22:32:33.286711+00:00 INFO csm[42338]: [xid@1192 xid=UouSIxxOzz9 cid=000003cd0a69 did= name=downstream] open session on: vca129mddcwi.mddc.wi.charter.com:16668
+
+2019-04-08T22:32:33.407029+00:00 INFO csm[42338]: [xid@1192 xid=UouSIxxOzz9 cid=000003cd0a69 did= name=BcpPlugin] using stream resource: {"QrmChannelId":"1774:6:2:109", "QrmResourceIndex":0, "bitrate":1, "headendId":10013, "networkNumber":"ffff", "pcrPreamble":{"pcrSpacingMs":1, "timeBeforeSkewingMs":100, "totalSkewMs":260}, "programNumber":1, "qamFrequency":525000000, "qamModulation":256, "referenceId":3381312695426718914, "requestLatency":0, "sgid":24018, "srmHash":"QrmPlugin", "symbolRate":5360537, "targetIp":"172.18.104.138", "targetPort":32321, "transportStreamId":11272}
+
+5. Log on the stitcher and confirm the connection to the edge device. 
+
+netstat -nputw | grep udp | sort
+
+udp        0      0 172.17.68.134:12161     172.17.100.66:38465     ESTABLISHED 63085/compositor-ng 
+udp        0      0 172.17.68.134:17149     71.10.216.1:53          ESTABLISHED 9621/traffic_server 
+udp        0      0 172.17.68.134:21639     172.17.100.154:6145     ESTABLISHED 63085/compositor-ng 
+udp        0      0 172.17.68.134:24417     172.18.104.138:32321    ESTABLISHED 63085/compositor-ng 
+udp        0      0 172.17.68.134:24936     172.18.104.138:32257    ESTABLISHED 63085/compositor-ng 
+udp        0      0 172.17.68.134:28120     71.10.216.2:53          ESTABLISHED 9621/traffic_server 
+udp        0      0 172.17.68.134:50391     172.18.111.106:16961    ESTABLISHED 63085/compositor-ng 
+udp        0      0 172.17.68.134:58867     172.17.98.106:18497     ESTABLISHED 63085/compositor-ng
+
+6. Run Ansible on wrk01 and find the stitcher that is not the active stitcher from above. 
+
+ansible mddcwi.mddc.wi-stitchers -b -m shell -a "sudo netstat -nputw | grep 172.18.104.138:32321" <--change to your Datacenter and change port and IP. 
+
+7. Log on the stitcher confirm it is sitll broadcasting to that port and ip. 
+
+netstat -nputw | grep udp | sort
+
+udp        0      0 172.17.68.154:25999     172.17.99.17:33793      ESTABLISHED -                   
+udp        0      0 172.17.68.154:26362     172.18.104.138:32321    ESTABLISHED -                   
+udp        0      0 172.17.68.154:36429     172.17.99.41:6209       ESTABLISHED -                   
+udp        0      0 172.17.68.154:44941     71.10.216.2:53          ESTABLISHED -                   
+udp        0      0 172.17.68.154:55855     71.10.216.1:53          ESTABLISHED - 
+
+8. Once confirmed restart compositor on the stitcher with the ghost session. 
+
+sudo service compositor restart
+
+9. Confirm macroblocking has been resolved. 
