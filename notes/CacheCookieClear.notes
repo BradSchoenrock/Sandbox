@@ -1,0 +1,10 @@
+
+
+
+ansible vca*sldcla.sldc.la.charter.com  -b -m shell -a "service trafficserver stop; traffic_server -Cclear; service trafficserver start" | grep -i fail
+
+ansible pxy*sldcla.sldc.la.charter.com  -b -m shell -a "service trafficserver stop; traffic_server -Cclear; service trafficserver start" | grep -i fail
+
+ansible gpc*sldcla.sldc.la.charter.com -b -m shell -a "sudo bash /usr/local/scripts/via/cookie_monster.sh" | grep -i fail
+
+

@@ -1,0 +1,50 @@
+
+Last Week's Goals
+
+
+
+-----------------------------------
+
+Status Update: 
+
+5/13
+8 hrs - pulling together new stitcher migration plan
+
+5/14
+4 hrs - working with cam on POV for stitcher mitigation for presentation
+2 hrs - correcting time sync on dldctx stitchers, failing to build them
+2 hrs - discussion of session size with David L. and meeting with Jeff W. (he skipped) 
+
+5/15
+1 hr - standup
+2 hrs - bhnoh stitcher migration
+6 hrs - twcoh stitcher migration
+1 hr - discussions on automation of ghost session killer 
+1 hr - DNS meeting
+1 hr - before after session size sldcla
+
+5/16
+3 hrs - developing better script for ghost session detection
+2 hrs - twcoh stitcher migration
+4 hrs - building stitchers for dldctx
+1 hr - misc tasks/Icinga alarming
+
+5/16 maint. window
+1 hr - stitcher cutover dldctx
+1 hr - finishing session bleed for twcoh
+
+5/17
+6 hrs - twcoh stitcher migration
+2 hrs - pacman deployment
+1 hr - various conversations about stitcher virtualization and always on guide
+1 hr - various conversations about stitcher mitigation plan 
+
+
+
+-----------------------------------
+
+Plans for this week
+
+
+
+

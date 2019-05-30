@@ -1,0 +1,9 @@
+zodiacams-am* 
+or 
+zodiacams-am-activity* 
+
+
+AppScreen:"OV-NR-GUIDE" AND rdc:pldcor
+
+AppScreen:"OV-NR-GUIDE" AND location:kennwa
+

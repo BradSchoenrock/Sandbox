@@ -1,0 +1,225 @@
+removed vca291 and up
+
+bhn003-006 migrated
+
+
+
+first batch of twcoh migrations 
+
+vca001twcoh
+vca003twcoh
+vca004twcoh
+vca006twcoh
+vca015twcoh
+vca017twcoh
+vca018twcoh
+vca020twcoh
+
+vca029twcoh
+vca031twcoh
+vca032twcoh
+vca034twcoh
+vca045twcoh
+vca051twcoh
+vca052twcoh
+vca063twcoh
+
+Second batch of twcoh migrations 
+
+vca068twcoh
+vca069twcoh
+vca086twcoh
+vca087twcoh
+vca088twcoh
+vca089twcoh
+vca094twcoh
+vca095twcoh
+
+vca096twcoh
+vca097twcoh
+vca108twcoh
+vca109twcoh
+vca110twcoh
+vca111twcoh
+vca122twcoh
+vca123twcoh
+
+Third batch of twcoh migrations 
+
+vca125twcoh
+vca134twcoh
+vca136twcoh
+vca137twcoh
+vca139twcoh
+vca144twcoh
+vca150twcoh
+vca153twcoh
+
+vca156twcoh
+vca159twcoh
+vca168twcoh
+vca171twcoh
+vca174twcoh
+vca177twcoh
+vca186twcoh
+vca189twcoh
+
+Fourth batch of twcoh migrations
+
+vca192twcoh
+vca195twcoh
+vca204twcoh
+vca207twcoh
+vca210twcoh
+vca213twcoh
+vca221twcoh
+vca222twcoh
+
+vca224twcoh
+vca233twcoh
+vca235twcoh
+vca236twcoh
+vca238twcoh
+vca247twcoh
+vca249twcoh
+vca250twcoh
+
+vca252twcoh
+vca261twcoh
+vca263twcoh
+vca264twcoh
+vca266twcoh
+vca277twcoh
+vca280twcoh
+vca283twcoh
+
+vca286twcoh
+
+vca087twcoh
+
+
+
+yes
+
+
+JjqG3aM?Toe&47
+
+
+re-imaged from kickstart server
+
+sudo su
+
+hostname
+
+ifconfig
+
+systemctl stop iptables; systemctl disable iptables; systemctl status iptables
+
+systemctl stop ntpd;ntpdate 71.44.37.103;sleep 1;ntpdate 71.44.37.103;sleep 1;systemctl start ntpd;sleep 1;systemctl status ntpd
+
+ntpstat
+
+exit
+
+
+
+reboot
+
+
+
+
+Python script to 
+       bootstrap
+       chef runs
+
+
+
+
+ssh as IPA 
+
+
+yes
+
+sudo su
+
+
+1.618Atlas
+
+h5restartall
+
+systemctl stop chronyd; systemctl disable chronyd; systemctl status chronyd
+
+systemctl stop nscd; systemctl disable nscd; systemctl status nscd
+
+systemctl stop ntpd;ntpdate 71.44.37.103;ntpdate 71.44.37.103;sleep 3;systemctl start ntpd;systemctl status ntpd;sleep 3;ntpstat
+
+exit
+
+
+
+
+
+
+
+to manually bootstrap (example) - 
+
+knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x silver -P 'JjqG3aM?Toe&47' --sudo 172.28.124.29 -N vca024dldctx.dldc.tx.charter.com -E dldctx 
+        
+knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x silver -P 'JjqG3aM?Toe&47' --sudo 69.23.28.92 -N vca087twcoh.codc.oh.charter.com -E twcoh        
+
+bootstrapCMD = "knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x "+user+" -P \'"+password+"\' --sudo "+IPAddr+" -N "+hostname+" -E "+RDC+" -r recipe[chtr_stitcher],recipe[chtr_logstash],recipe[chtr_nrpe]"
+
+
+to manually chef - 
+
+sudo chef-client -E twcoh -r recipe[chtr_common]
+
+reboot
+
+sudo chef-client -E twcoh -r recipe[chtr_stitcher],recipe[chtr_nrpe],recipe[chtr_logstash]
+
+
+
+
+
+Other - 
+
+JjqG3aM?Toe&47
+
+Arm@d!llo_Kum!s&Pulque#
+
+
+
+python StitcherScript.py -H /home/bschoenrock/PythonScripts/test2.txt -C 55 -E twcoh
+
+
+
+
+
+
+to delete boot sector and reboot
+
+sudo dd if=/dev/zero of=/dev/sda bs=1M count=100
+
+sudo shutdown -r now
+￼
+
+
+
+
+
+knife node delete -y vca087twcoh.codc.oh.charter.com
+
+knife client delete -y vca087twcoh.codc.oh.charter.com
+
+knife node show vca087twcoh.codc.oh.charter.com
+
+
+
+
+
+
+
+
+
+downtime -f vca238twcoh.codc.oh.charter.com -m clear -c "Stitcher is done being migrated within the datacenter"
