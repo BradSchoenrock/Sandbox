@@ -1,0 +1,77 @@
+
+Last Week's Goals
+
+
+
+-----------------------------------
+
+Status Update: 
+
+6/15 - on call
+10:00 - 12:00
+INC000002862770​
+NYC-N Manhattan/Staten Island-Hubs E, F, G and N - Updating Channels error
+customers are reporting black screen as well and DVR functionality issues​ 
+resolved by rolling restart of AMS cluster. 
+
+4:00 - 6:00
+INC000002867001
+Netflix Error Code GAL-1005.​
+Resolved by billing on a case by case basis.
+ 
+2 hrs - on call monitoring Icinga alarms
+
+6/16
+2 hrs - on call monitoring Icinga alarms
+
+6/17
+1 hr - follow up for weekend on call
+1 hr - capacity meeting with Bradley G. 
+1 hr - making mop for stitcher memory uplift. 
+1 hr - discussion on capacity, TSBs memory
+4 hrs - CSM-stitcher connectivity NY
+1 hr - Stale Sessions on stitchers
+1 hr - monitoring remediation script
+
+6/18
+4 hrs - NYDC networking bridge
+2 hrs - tuning failures and executive reporting discussion David L. 
+1 hr - tracking NYDC networking mistake
+1 hr - recovering vca058mddcwi kestrel crash
+
+6/19
+2 hrs - writing mop for AMS maint. 
+2 hrs - netscout training
+1 hr -  stitcher recovery script writing
+2 hrs - discussion with Dave McKnight on netscout results (CSM-Stitcher)
+1 hr - stitcher recovery script review
+
+6/20
+1 hr - discussion with Ed on Qam bandwidth
+1 hr - discussion with David L. on stats 
+1 hr - organizing carolinas AMS maint window work with carlos
+2 hrs - prep work for AMS updates
+1 hr - discussion on stitcher stream issues reno Ed M. Ben D. 
+
+6/20 Maint. Window
+2 hrs - AMS upgrades carolinas
+
+6/21
+1 hr - Clearing problems with Carlos's DB work on AMSs
+2 hrs - creating mops for stitcher memory uplift
+1 hr - monitoring Icinga alarms
+2 hrs - scrubbing kibana logs for qam issues 
+1 hr - Dave. Mckight investigation to TSB latency issues TWCNY.NYDC
+
+
+
+
+
+
+-----------------------------------
+
+Plans for this week
+
+
+
+

@@ -1,0 +1,14 @@
+
+
+
+
+ansible pldcor.pldc.or-stitchers -m shell -a "scp wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/pacmanv6.sh /home/bschoenrock" | grep -i fail
+
+ansible pldcor.pldc.or-stitchers -b -m shell -a "ls /home/bschoenrock/pacmanv6.sh" | grep -i fail
+
+ansible pldcor.pldc.or-stitchers -b -m shell -a "cp /home/bschoenrock/pacmanv6.sh /root" | grep -i fail
+
+ansible pldcor.pldc.or-stitchers -b -m shell -a "cp /home/bschoenrock/pacmanv6.sh /etc/cron.hourly/pacman.sh" | grep -i fail
+
+
+

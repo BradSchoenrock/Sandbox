@@ -1,0 +1,13 @@
+systemctl stop ntpd;ntpdate 71.10.216.7;ntpdate 71.10.216.7;systemctl start ntpd;systemctl status ntpd
+
+systemctl stop ntpd;ntpdate 24.174.41.6;ntpdate 24.174.41.6;systemctl start ntpd;systemctl status ntpd
+
+ 
+
+systemctl stop ntpd;ntpdate 71.44.37.103;ntpdate 71.44.37.103;systemctl start ntpd;systemctl status ntpd
+
+ 
+
+ntpstat to find the current ntp server.
+
+ 

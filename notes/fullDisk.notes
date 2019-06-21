@@ -1,0 +1,6 @@
+du -h --max-depth=1 | sort -h
+
+ls -latrs 
+
+ls -latrs cloudtv*
+

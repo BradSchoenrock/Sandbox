@@ -1,0 +1,61 @@
+
+
+
+
+
+yes
+
+
+JjqG3aM?Toe&47
+
+
+sudo su
+
+hostname
+
+ifconfig
+
+systemctl stop iptables; systemctl disable iptables; systemctl status iptables
+
+systemctl stop ntpd;ntpdate 71.10.216.7;sleep 1;ntpdate 71.10.216.7;sleep 1;systemctl start ntpd;sleep 1;systemctl status ntpd
+
+ntpstat
+
+exit
+
+
+
+python StitcherScript.py -H /home/bschoenrock/PythonScripts/renonvStitcherListBatch2.txt -C 55 -E renonv
+
+Python script to 
+       bootstrap
+       chef runs
+
+
+
+
+
+
+poweroff
+
+yes
+
+1.618Atlas
+
+sudo su
+
+
+h5restartall
+
+systemctl stop chronyd; systemctl disable chronyd; systemctl status chronyd
+
+systemctl stop nscd; systemctl disable nscd; systemctl status nscd
+
+systemctl stop ntpd;ntpdate 71.10.216.7;ntpdate 71.10.216.7;sleep 3;systemctl start ntpd;systemctl status ntpd;sleep 3;ntpstat
+
+ntpstat
+
+exit
+
+
+

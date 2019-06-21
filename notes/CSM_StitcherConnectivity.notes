@@ -28,3 +28,21 @@ service csm stop
 ps ax|grep csm
 service csm start
 ​
+
+
+
+
+
+
+
+
+
+host1=$(hostname)
+
+echo ${host1/vca[0-9][0-9][0-9]/csm01}
+
+nslookup csm01twcny | grep -A 3 answer | grep Address | cut -d " " -f 2
+
+netstat -anp | egrep "98.12.198.73|98.12.198.72|98.12.198.71" | wc -l
+
+
