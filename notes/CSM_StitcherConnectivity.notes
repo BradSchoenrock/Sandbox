@@ -14,6 +14,7 @@ netstat -ant | grep 16668[\ ]*ESTABLISHED | tr -s ' ' | cut -d " " -f 5 | sort
 to reload CSM config - 
 
 /opt/csm/csmconfig --host=69.205.118.71 --all
+/opt/csm/csmconfig --host=107.8.246.71 -t
 
 
 Other Misc CSM commands. 

@@ -1,0 +1,9 @@
+
+
+
+https://vcenter01dldctx.dldc.tx.charter.com:9443/vsphere-client/#
+
+
+
+vsphere_user           = "terraform_vid"
+vsphere_password       = "<99uKcztRB-3"
