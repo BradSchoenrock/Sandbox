@@ -1,0 +1,69 @@
+
+Last Week's Goals
+
+
+
+-----------------------------------
+
+Status Update: 
+
+Week of being Michelle - 
+
+7/22
+1 hr - management meeting 
+2 hrs - discussions on TSID vs SGID in AMS DB
+4 hrs - QAM analysis, resolving TSID vs SGID 
+1 hr - consulting engineers on Maint. Window and on call activities
+1 hr - Go/No Go call for SLDCMO stitcher uplift
+1 hr - info to Dave Ulv. to rebuild stitchers this week
+
+7/23
+1 hr - morning standup, team direction and consulting
+1 hr - monitoring Icinga & working with on call 
+2 hrs - respectful workplace training
+1 hr - assisting Dave Ulv. stitcher rebuild SLDCMO
+3 hrs - setting up always on guide meeting & review of slide deck
+
+7/24
+1 hr - standup & misc team direction and consulting
+1 hr - monitoring Icinga & working with on call 
+1 hr - Maint window organizational meeting 
+1 hr - assisting Dave Ulv. stitcher rebuild SLDCMO
+1 hr - budget work meeting & follow up
+1 hr - oracle overview working meeting
+2 hr - Always on Q&A VidOps meeting and proposal review
+1 hr - QAM Bandwidth analysis and review with Alan
+
+7/25
+1 hr - standup & misc team direction and consulting
+1 hr - monitoring Icinga & working with on call 
+3 hrs - PIP presentation & follow up discussions
+3 hrs - budgeting reports 
+1 hr - Jira ticketing and assigning tasks
+1 hr - TX VOD outage INC000003096548
+1 hr - misc mngt meetings 
+
+7/26
+1 hr - standup & misc team direction and consulting
+1 hr - monitoring Icinga & working with on call 
+3 hrs - budgeting reports
+2 hrs - QAM bandwidth write up edits
+
+
+
+
+VOPINGSG-7493 : CS-4611 Funnel Disk Utilization - Ben G. 
+VOPINGSG-7492 : Cache/Cookie clear Netflix Issue spikes - GAL-1003 - Brad S.
+VOPINGSG-7445 : SIT-PT | TCP dump on CSM for SVAV-127 - On Call
+VOPINGSG-7385 : Logstash service fix on Production boxes/Missing hosts in Elasticsearch - Brad S. 
+
+
+
+
+-----------------------------------
+
+Plans for this week
+
+
+
+
