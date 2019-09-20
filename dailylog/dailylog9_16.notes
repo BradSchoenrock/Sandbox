@@ -1,0 +1,64 @@
+
+Last Week's Goals
+
+
+
+-----------------------------------
+
+Status Update: 
+
+9/16
+1 hr - dealing with email spam
+2 hrs - enic problem with vca218twcoh INC000003398401
+2 hrs - fighting to get access to cloudforms & VSphere
+2 hrs - monitoring Icinga
+1 hr - logevents scripting
+1 hr - training & certifications investiations
+
+start of on call
+
+9/17
+1 hr - monitoring Icinga 
+8 hrs - VOD MDMS outage & follow up INC000003468752
+
+RCA: failover HSM module failing to allocate memory for SSL, goes degraded, downs links and asks for failover, failover happens and it offlines and goes standby
+
+connections need to be restarted on VIP failover
+Known software bug in VIP 
+Resolution in new version
+possible mitigation for VOD/SDV Ops - change the SSL profile cache timeout to 180 from 3600  
+
+6 hrs - NOTE: Multiple Channels - Spec Guide Barker - No Audio/Video - Hickory, Lenoir, Lincolnton Hubs INC000003464970 (FWD to Liz & Teja)
+
+BHNFL cache clear to support INC000003417736
+
+9/18
+2 hrs - RCA & Follow up on SCM VIP  INC000003464970
+1 hr - RCA discussions & follow up on VOD MDMS outage INC000003468752
+2 hrs - recovery of vca078twcoh INC000003322942
+2 hrs - guide usage in MW request Alan
+
+3 hrs - incorrect logo appearing on the mini-guide Orlando, FL - INC000003476844
+
+9/19
+3 hrs - INC000003483425 Tricity, TN - VOD outage
+1 hr - consulting on CSM capacity planning
+1 hr - tracking on vca078twcoh INC000002825997/INC000003474895
+1 hr - follow up on incorrect logo appearing on the mini-guide Orlando, FL - INC000003476844
+2 hrs - consulting on Raj's socekt exhaustion script
+3 hrs - link in SYDC INC000003484066
+2 hrs - SPDCSC dropped config INC000003487217
+
+9/20
+2 hrs - follow up outage discussions with Ed & briefing Ben for his on call. 
+ hrs - setting up Windows subsystem for Linux. 
+
+
+
+-----------------------------------
+
+Plans for this week
+
+
+
+

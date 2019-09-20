@@ -1,0 +1,4 @@
+one liner to check if logevents file is in the GB range and zero it out if needed. 
+
+
+if [ ! -z $(ls -lh /var/opt/queue/journals/logevents | cut -d " " -f 5 | grep G) ]; then > /var/opt/queue/journals/logevents; fi;

@@ -1,0 +1,93 @@
+
+
+
+
+
+grep "using stream resource" /var/log/cloudtv.log* | cut -d ":" -f 24 | cut -d "," -f 1
+
+
+
+
+ansible csm1*.charter.com -m shell -a "scp wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/CustomersPerSGID.sh /home/bschoenrock" | grep asdf
+
+ansible csm1*.charter.com -m shell -a "rm /home/bschoenrock/thing*; bash /home/bschoenrock/CustomersPerSGID.sh > thing.txt" | grep asdf
+
+
+
+ansible csm*.charter.com -m shell -a "sed -i 's/22/25/g' /home/bschoenrock/CustomersPerSGID.sh; rm /home/bschoenrock/thing.txt; bash /home/bschoenrock/CustomersPerSGID.sh > thing.txt" | grep asdf
+
+
+
+
+1.618Atlas
+
+
+
+
+
+
+24
+scp csm11sldcmo.sldc.mo.charter.com:/home/bschoenrock/thing.txt thing11sldcmo.txt
+scp csm12sldcmo.sldc.mo.charter.com:/home/bschoenrock/thing.txt thing12sldcmo.txt
+scp csm13sldcmo.sldc.mo.charter.com:/home/bschoenrock/thing.txt thing13sldcmo.txt
+
+
+22
+scp csm11sldcla.sldc.la.charter.com:/home/bschoenrock/thing.txt thing11sldcla.txt
+scp csm12sldcla.sldc.la.charter.com:/home/bschoenrock/thing.txt thing12sldcla.txt
+scp csm13sldcla.sldc.la.charter.com:/home/bschoenrock/thing.txt thing13sldcla.txt
+
+scp csm11pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing11pldcor1.txt
+scp csm12pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing12pldcor1.txt
+scp csm13pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing13pldcor1.txt
+
+
+25
+scp csm11renonv.reno.nv.charter.com:/home/bschoenrock/thing.txt thing11renonv.txt
+scp csm12renonv.reno.nv.charter.com:/home/bschoenrock/thing.txt thing12renonv.txt
+scp csm13renonv.reno.nv.charter.com:/home/bschoenrock/thing.txt thing13renonv.txt
+
+scp csm11spdcsc.spdc.sc.charter.com:/home/bschoenrock/thing.txt thing11spdcsc.txt
+scp csm12spdcsc.spdc.sc.charter.com:/home/bschoenrock/thing.txt thing12spdcsc.txt
+scp csm13spdcsc.spdc.sc.charter.com:/home/bschoenrock/thing.txt thing13spdcsc.txt
+
+scp csm11knwdmi.knwd.mi.charter.com:/home/bschoenrock/thing.txt thing11knwdmi.txt
+scp csm12knwdmi.knwd.mi.charter.com:/home/bschoenrock/thing.txt thing12knwdmi.txt
+scp csm13knwdmi.knwd.mi.charter.com:/home/bschoenrock/thing.txt thing13knwdmi.txt
+
+scp csm11mddcwi.mddc.wi.charter.com:/home/bschoenrock/thing.txt thing11mddcwi.txt
+scp csm12mddcwi.mddc.wi.charter.com:/home/bschoenrock/thing.txt thing12mddcwi.txt
+scp csm13mddcwi.mddc.wi.charter.com:/home/bschoenrock/thing.txt thing13mddcwi.txt
+
+scp csm11edprmn.edpr.mn.charter.com:/home/bschoenrock/thing.txt thing11edprmn.txt
+scp csm12edprmn.edpr.mn.charter.com:/home/bschoenrock/thing.txt thing12edprmn.txt
+scp csm13edprmn.edpr.mn.charter.com:/home/bschoenrock/thing.txt thing13edprmn.txt
+
+scp csm11pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing11pldcor2.txt
+scp csm12pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing12pldcor2.txt
+scp csm13pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing13pldcor2.txt
+
+
+
+1.618Atlas
+
+
+
+
+cat thing1[1-3]renonv.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > renonvResults.txt
+
+cat thing1[1-3]spdcsc.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > spdcscResults.txt
+
+cat thing1[1-3]knwdmi.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > knwdmiResults.txt
+
+cat thing1[1-3]mddcwi.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > mddcwiResults.txt
+
+cat thing1[1-3]edprmn.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > edprmnResults.txt
+
+cat thing1[1-3]sldcmo.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > sldcmoResults.txt
+
+cat thing1[1-3]sldcla.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > sldclaResults.txt
+
+cat thing1[1-3]pldcor1.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > pldcorResults1.txt
+
+cat thing1[1-3]pldcor2.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > pldcorResults2.txt

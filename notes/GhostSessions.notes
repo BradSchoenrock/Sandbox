@@ -1,26 +1,13 @@
 
 
+QAM Markets - 
 
-sudo netstat -nputw | grep udp | grep compositor | sort | grep -v 127.0.0 | wc -l;snmpwalk -v2c -c public localhost 1.3.6.1.4.1.1192.1.1.1.4 | sed -n 's/.*Gauge32: \(.*\)$/\1/p'
-
-
-
+sudo netstat -nputw | grep udp | grep compositor | sort | grep -v 127.0.0 | wc -l; snmpwalk -v2c -c public localhost 1.3.6.1.4.1.1192.1.1.1.4 | sed -n 's/.*Gauge32: \(.*\)$/\1/p'
 
 
 
+DOCSIS Markets - 
+
+sudo netstat -nputw | grep tcp6 | grep compositor | sort | grep -v 127.0.0 | grep -v "0 ::1" | wc -l; snmpwalk -v2c -c public localhost 1.3.6.1.4.1.1192.1.1.1.4 | sed -n 's/.*Gauge32: \(.*\)$/\1/p'
 
 
-Hi NOC,
- 
-INC#### ​​-- Resolved
- 
-Break fix : Ghost sessions
- 
-Servers:
- 
-action: h5restartall 
-No Customer Impact​
- 
-Cheers!
-
-Brad Schoenrock 

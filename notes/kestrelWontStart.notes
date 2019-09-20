@@ -1,0 +1,14 @@
+
+sudo su
+
+cd /var/opt/queue/journals
+
+
+rm logevents 
+
+
+systemctl restart kestrel
+
+systemctl status kestrel
+
+

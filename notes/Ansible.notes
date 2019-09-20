@@ -1,0 +1,5 @@
+custom hosts file, newline delimited FQDNs 
+
+
+
+ansible -i vca_sldcmo -m shell -a "free -m" all
