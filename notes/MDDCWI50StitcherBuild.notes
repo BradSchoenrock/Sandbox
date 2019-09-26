@@ -1,0 +1,159 @@
+
+
+
+
+downtime stitcher being worked on in Icinga. Take offline in GUI & make sure traffic is drained. In DOCSIS markets let traffic drain off (can take a few hours). In QAM markets force traffic off (h5restartall will work for this.) 
+
+downtime -f vca050mddcwi.mddc.wi.charter.com -m set -c "Stitcher being rebuilt after APO reassociated the profile. INC000003211905"
+
+-------------------
+
+to delete boot sector and reboot
+THERE WILL BE NOTHING LEFT OF THE OS OR ANY AV APPS FROM CHEF RUN IF YOU DO THIS
+
+sudo dd if=/dev/zero of=/dev/sda bs=1M count=100
+
+sudo poweroff
+
+-------------------
+
+check spacewalk for client 
+
+ssh root@swh01mddcwi.mddc.wi.charter.com
+
+root
+Charter1
+
+cobbler system list
+cobbler system report --name vca050mddcwi.mddc.wi.charter.com
+
+to remove a bad profile
+
+cobbler system remove --name vca050mddcwi.mddc.wi.charter.com
+
+to add a new profile
+
+./kickstart.sh <myKickstartFile> 
+
+service cobblerd restart
+cobbler sync
+
+<myKickstartFile> should be formatted as mddcwistitchers is - 
+MACAddr FQDN IPAddr
+
+When rebuilding run the following tail to watch dhcp registration
+
+tail -F /var/log/messages | grep -i dhcp
+
+-------------------
+
+log into wrk01
+
+ssh bschoenrock@wrk01pvdcco.pvdc.co.charter.com
+
+knife node show vca050mddcwi.mddc.wi.charter.com
+
+remove if its entry needs updating 
+
+knife node delete -y vca050mddcwi.mddc.wi.charter.com
+
+knife client delete -y vca050mddcwi.mddc.wi.charter.com
+
+-------------------
+
+Log into UCS manager via web browser & bring up KVM console. 
+
+https://bcm00mddcwi.mddc.wi.charter.com/
+
+Look for hardware errors & profile associations. 
+
+video_VIA
+87sUIifxd
+
+power on blade & start pressing f12 to PXE boot blade 
+
+check dhcp registration in swh window. 
+
+Linux install should start. 
+
+-------------------
+
+Log into stitcher with build credentials
+
+ssh silver@vca050mddcwi.mddc.wi.charter.com
+
+silver
+JjqG3aM?Toe&47
+
+pre-chef run check info for chef runs: 
+
+hostname
+
+ifconfig
+
+
+sudo su
+
+systemctl stop iptables; systemctl disable iptables; systemctl status iptables
+
+systemctl stop ntpd;ntpdate 71.44.37.103;sleep 1;ntpdate 71.44.37.103;sleep 1;systemctl start ntpd;sleep 1;systemctl status ntpd
+
+ntpstat
+
+exit
+
+-------------------
+
+on wrk01 use StitcherScript.py to bootstrap node & run chef. 
+
+python StitcherScript.py -H /home/bschoenrock/PythonScripts/mddcwi50StitcherList.txt -C 50 -E mddcwi
+
+---
+
+to manually bootstrap 
+
+knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x silver -P 'JjqG3aM?Toe&47' --sudo 172.17.68.55 -N vca050mddcwi.mddc.wi.charter.com -E mddcwi
+
+to manually run chef on stitcher
+
+ssh with build credentials: 
+
+sudo chef-client -E mddcwi -r recipe[chtr_common]
+
+reboot
+
+ssh with IPA credentials: 
+
+sudo chef-client -E mddcwi -r recipe[chtr_stitcher],recipe[chtr_nrpe],recipe[chtr_logstash]
+
+-------------------
+
+Log into stitcher with IPA 
+
+ssh bschoenrock@vca050mddcwi.mddc.wi.charter.com
+
+sudo su
+
+h5restartall
+
+systemctl stop chronyd; systemctl disable chronyd; systemctl status chronyd
+
+systemctl stop nscd; systemctl disable nscd; systemctl status nscd
+
+systemctl stop ntpd;ntpdate 71.10.216.7;ntpdate 71.10.216.7;sleep 3;systemctl start ntpd;systemctl status ntpd;sleep 3;ntpstat
+
+ntpstat
+
+chown -R polkitd:polkitd /etc/polkit-1/localauthority;
+chown -R polkitd:polkitd /etc/polkit-1/localauthority.conf.d;
+chown polkitd:polkitd /etc/polkit-1/rules.d/49-polkit-pkla-compat.rules
+
+reboot
+
+-------------------
+
+check Icinga & bring stitcher back online & healthy in GUI. 
+
+downtime -f vca050mddcwi.mddc.wi.charter.com -m clear -c "Stitcher done being rebuilt after INC000003211905"
+
+

@@ -1,0 +1,27 @@
+
+
+
+Known F5 VIP problems. 
+
+8/01 - INC000003142148
+9/08 - 06:44 - 06:56 - No INC
+9/11 - 23:04 - 23:19 - INC000003430511
+9/13 - 11:43 - 11:51 - No INC given, denied by NOC
+9/17 - 15:44 - 15:53 - INC000003468752 
+9/18 - 00:24 - 00:40 - INC000003464970
+9/19 - same F5 bug showed in SCM VIP in SLDCMO, not the MDMS VIP - INC000003487217
+9/21 - 19:45 - 19:50 - No INC yet, awaiting response from NOC
+9/23 - 05:48 - 05:58 - No INC yet, awaiting response from NOC
+9/24 - 22:46 - 22:53 - No INC 
+
+
+Times UTC
+
+
+F5 Case - 1-5480043681
+
+
+
+
+
+

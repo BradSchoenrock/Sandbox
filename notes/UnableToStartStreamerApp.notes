@@ -1,0 +1,59 @@
+
+
+
+UnableToStartStreamerApp errors: 
+
+measured 9/23 ~11 AM
+
+5905 in past 7 days from compositor crash: visible by kibana query: "reason:Can't find group"
+
+62521 in past 7 days from html5client crash: visible by kibana query: "update: Can't find group"
+
+"Can't find group" messages correlated to memory violation messages from /var/log/messages. 
+
+footprint wide memory violations on stitchers from /var/log/messages : 
+
+sudo cat /var/log/messages* | grep memory | grep -v ansible | grep SockEv
+SockEv (kernel) 154
+
+sudo cat /var/log/messages* | grep memory | grep -v ansible | grep html5client
+html5client (SGUI) 753
+
+sudo cat /var/log/messages* | grep memory | grep -v ansible | grep TSWPool
+TSWPool (compositor) 2
+
+
+﻿
+When compositor crashes it has more error messages in a short amount of time, but by volume the Cause of our errors isn't the compositor, it is overwhelmingly the SGUI application.
+﻿
+Ivan/SE already has crash reports on an html5client error which was provided on 8/2. This was brought to his attention and he acknowledged that he would investigate on 8/5. 
+﻿
+As an example this error message came up in /var/log/messages three times on vca105mddcwi - 
+Sep 17 00:48:04 vca105mddcwi kernel: type=1701 audit(1568681284.774:836217): auid=4294967295 uid=9 gid=16 ses=4294967295 pid=15311 comm="html5client" reason="memory violation" sig=11
+Sep 18 20:13:22 vca105mddcwi kernel: type=1701 audit(1568837602.405:881466): auid=4294967295 uid=9 gid=16 ses=4294967295 pid=10538 comm="html5client" reason="memory violation" sig=11
+Sep 23 03:04:14 vca105mddcwi kernel: type=1701 audit(1569207854.901:987914): auid=4294967295 uid=9 gid=16 ses=4294967295 pid=58567 comm="html5client" reason="memory violation" sig=11
+
+and correlates to spikes of 24, 111, and 86 "update: Can't find group" messages respectivly. 
+
+</rant> 
+
+
+
+
+
+
+
+
+
+
+
+1) "segfault" message in /var/log/messages
+AND
+2) "compositor.service: main process exited" seperated from segfault message by no more than 1 minute
+AND
+3) volume of "reason:Can't" messages () in /var/log/cloudtv.log that persist for over 30 min after compositor crash. 
+
+
+
+
+
