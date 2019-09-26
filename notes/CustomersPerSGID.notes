@@ -2,6 +2,32 @@
 
 
 
+psql -h 98.8.170.147 -U mcuser -d mc_v2
+
+
+
+McUser1!
+
+
+
+
+
+select count(*) as raw, sdv_sg_id from stb_metadata where db='stlomo' group by sdv_sg_id order by raw desc; 
+
+
+ select count(*) as raw, sdv_sg_id, db from stb_metadata where db='knwdmi' OR db='baysmi' OR db='sldlla' OR db='tbdxla' OR db='ashenc' OR db='gsaasc' OR db='stlomo' OR db='escnmi' OR db='madiwi' OR db='stvnwi' OR db='kearne' OR db='rochmn' OR db='stclmn' OR db='kennwa' OR db='medfor' OR db='renonv' group by sdv_sg_id, db order by raw desc;
+
+
+
+
+\q
+
+
+
+-------------------------------------
+
+
+
 
 grep "using stream resource" /var/log/cloudtv.log* | cut -d ":" -f 24 | cut -d "," -f 1
 
@@ -19,7 +45,6 @@ ansible csm*.charter.com -m shell -a "sed -i 's/22/25/g' /home/bschoenrock/Custo
 
 
 
-1.618Atlas
 
 
 
