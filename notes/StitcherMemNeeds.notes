@@ -1,0 +1,70 @@
+
+9/11
+
+Bump for visibility. 
+
+
+7/31
+
+Bump for visibility. 
+
+
+
+From: Schoenrock, Brad D
+Sent: Monday, June 10, 2019 4:13 PM
+To: Gunnis, Bradley M; Clauson, Matt E
+Cc: King, Camron F
+Subject: memory uplift to 256 GB
+
+
+
+Hey gents, 
+
+If i look at our markets that have M4 stitchers at 128GB of memory, and we want to get those up to 256 GB memory, the list looks like this. 
+
+RDC	N 128GB M4s    	N Sticks (16x16GB configuration) 
+N Sticks (8x32GB configuration)
+slotca
+13 stitchers 
+(On Site)
+(On Site)
+ladcca
+47 stitchers 
+384
+192 
+dldctx
+23 stitchers 
+192
+96
+nvdctn
+50 stitchers
+400
+200
+sldcla
+23 stitchers
+192 
+96
+bodcma
+55 stitchers
+448
+224 
+Total need:
+101 stitchers	1616
+808 
+
+
+For each RDC we would need half the number of stitchers rounded up worth of memory shipped in. So ladcca for example has 47 M4s with 128 GB of memory each, we can use that memory to fill 23 stitchers up to 256, and we would need enough memory shipped in to fill the other 24 up to 256. In sites with an odd number of stitchers that leaves us with 128 GB of extra memory to be used for whatever. I'm not sure what types of memory you've got laying around or how much, so let us know what ballpark you're in so we can uplift what we are able to and i can provide recommendations to alan/kristen about how much we will need to supplement with or timelines to wait for available memory. 
+
+
+
+The process for hands on site in order for this to work would roughly look like 
+
+1) pull two blades we specify. 
+2) put all memory from one pulled blade into the other. Fill the other pulled blade with 256 GB of shipped in memory. 
+3) insert two blades back where they came from. 
+4) repeat 1-3 until done. m
+5) for odd numbers of stitchers the last one will get filled with shipped in memory. 
+
+Cheers!
+
+Brad Schoenrock 

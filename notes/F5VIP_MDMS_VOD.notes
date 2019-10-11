@@ -23,5 +23,31 @@ F5 Case - 1-5480043681
 
 
 
+F5 upgraded on 9/26-9/27 Miant. window. 
+
+
+
+9/27 - 00:45 - 01:17 LscpServerConnection error SPDCSC
+9/27 - 07:25 - 07:31 nrpe_check_vod_server PLDCOR 
+9/27 - 08:40 - 08:51 nrpe_check_vod_server PLDCOR
+9/27 - 09:26 - 09:36 nrpe_check_vod_server PLDCOR
+9/28 - 01:15 - 01:35 LscpServerConnection error SPDCSC
+9/28 - 01:43 - 01:44 LscpServerConnection error BHDCAL
+9/28 - 01:43 - 01:44 LscpServerConnection error EDPRMN
+9/29 - 00:15 - 00:20 LscpServerConnection error SYDCNY 
+
+
+
+
+SYDC example messsage - 
+
+2019-09-29T00:20:05.404260+00:00 ERR csm[50788]: [LscpServerConnection] error on connecting to: 69.205.118.42:10101 :  [LSCPServerConnection.onCheckError]#012java.net.SocketException: Connection reset by peer#012#011at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)#012#011at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)#012#011at com.activevideo.reactor.Socket.finishConnect(Unknown Source)#012#011at com.activevideo.reactor.Domain.process(Unknown Source)#012#011at java.util.ArrayList.forEach(ArrayList.java:1249)#012#011at com.activevideo.reactor.Domain.run(Unknown Source)#012#011at com.activevideo.reactor.Domain.threadLoop(Unknown Source)#012#011at com.activevideo.reactor.Domain.lambda$new$0(Unknown Source)#012#011at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+to do a pcap on eth0 on CSM (approx 15 sec healthy) - 
+
+sudo tcpdump -i eth0 host 69.205.118.42 -c 1000 -w CSM-MDMS_Comms.pcap
 
 
