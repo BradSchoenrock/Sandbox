@@ -24,8 +24,35 @@ select count(*) as raw, sdv_sg_id from stb_metadata where db='stlomo' group by s
 
 
 
+
+
+
+[bschoenrock@wrk01pvdcco ~]$ curl -k -X POST https://98.8.170.143:8080/api/auth -H 'Client-Service: mcapi' -H 'Content-Type: application/json' -d '{ "username": "ipa", "password": "pass" }'
+"Username not found"
+[bschoenrock@wrk01pvdcco ~]$ 
+
+
 -------------------------------------
 
+to find STB using a lineup: 
+
+Use IPA and password here - 
+
+curl -k -X POST https://98.8.170.143:8080/api/auth -H 'Client-Service: mcapi' -H 'Content-Type: application/json' -d '{ "username": <username>, "password": <password> }'
+
+
+mc-util launch-kma -token=<token> -kma=leedal -command='pwreg get LugID'
+
+will return a Job ID, then input that here to look for lineup 22: 
+
+select mac,ip from job_responses_2019_10_21_leedal where job_id='<jobID>' and response like '%LugID 22%';
+
+or to create a csv of lineup 80: 
+
+\copy (select mac,ip from job_responses_2019_10_21_leedal where job_id='<jobID>' and response like '%LugID 80%') to keed22.csv with (format csv);
+
+
+-------------------------------------
 
 
 

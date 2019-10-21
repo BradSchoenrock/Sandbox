@@ -1,0 +1,3 @@
+edit yaml to use right stitcher list and username 
+
+ansible-playbook twcoh.yaml -f 50

@@ -1,5 +1,6 @@
 
 
+Times UTC
 
 Known F5 VIP problems. 
 
@@ -15,11 +16,8 @@ Known F5 VIP problems.
 9/24 - 22:46 - 22:53 - No INC 
 
 
-Times UTC
-
 
 F5 Case - 1-5480043681
-
 
 
 
@@ -35,6 +33,33 @@ F5 upgraded on 9/26-9/27 Miant. window.
 9/28 - 01:43 - 01:44 LscpServerConnection error BHDCAL
 9/28 - 01:43 - 01:44 LscpServerConnection error EDPRMN
 9/29 - 00:15 - 00:20 LscpServerConnection error SYDCNY 
+10/02 - 00:47 - Elastalert VOD LSCP Monitor SPDCSC
+10/03 - 00:02 - 00:19 LscpServerConnection error SPDCSC NOTE: at 00:33 - Elastalert VOD LSCP Monitor SPDCSC elastalert comes in ~15 min after errors stop. 
+10/04 - 01:18 - Elastalert VOD LSCP Monitor SPDCSC
+10/06 - 01:23 - Elastalert VOD LSCP Monitor SPDCSC
+10/06 - 02:03 - Elastalert VOD LSCP Monitor SPDCSC
+10/06 - 02:18 - Elastalert VOD LSCP Monitor SPDCSC
+10/07 - 00:33 - Elastalert VOD LSCP Monitor SPDCSC
+10/08 - 01:03 - Elastalert VOD LSCP Monitor SPDCSC
+10/09 - 07:00 - 07:05 nrpe_check_vod_server PLDCOR 
+10/10 - 03:39 - 03:43 nrpe_check_vod_server SYDCNY
+10/11 - 00:33 - Elastalert VOD LSCP Monitor SPDCSC
+10/11 - 00:48 - Elastalert VOD LSCP Monitor SPDCSC
+10/11 - 06:07 - 06:12 nrpe_check_vod_server BLNGMT
+10/11 - 07:00 - 07:05 nrpe_check_vod_server PLDCOR
+10/12 - 00:33 - Elastalert VOD LSCP Monitor SPDCSC
+10/11 - 16:33 - Elastalert VOD LSCP Monitor KNWDMI
+10/11 - 16:48 - Elastalert VOD LSCP Monitor KNWDMI
+10/11 - 22:58 - Elastalert VOD LSCP Monitor KNWDMI
+10/13 - 00:33 - Elastalert VOD LSCP Monitor SPDCSC
+10/13 - 22:34 - Elastalert VOD LSCP Monitor SPDCSC
+10/13 - 23:19 - Elastalert VOD LSCP Monitor SPDCSC
+10/14 - 00:04 - Elastalert VOD LSCP Monitor BHDCAL
+10/14 - 00:49 - Elastalert VOD LSCP Monitor SPDCSC
+
+
+
+
 
 
 
@@ -46,7 +71,13 @@ SYDC example messsage -
 
 
 
-to do a pcap on eth0 on CSM (approx 15 sec healthy) - 
+
+
+
+to do a pcap on eth0 on CSM (approx 15 sec healthy) find IP of MDMS VIP -
+ 
+grep "[LscpServerConnection] error on connecting to" /var/log/cloudtv.log*
+[bschoenrock@csm11spdcsc ~]$ 
 
 sudo tcpdump -i eth0 host 69.205.118.42 -c 1000 -w CSM-MDMS_Comms.pcap
 
