@@ -1,0 +1,25 @@
+
+
+ssh to content server to check lineup info 
+
+ssh vms01pldcor.pldc.or.charter.com
+
+less /var/www/html/avapps/dynamic/redd-46.json 
+
+"125" : {
+      "videos" : {
+      	       "small" : "udp://239.129.235.199:55001",
+	       "medium" : "udp://239.129.235.199:55002"
+       },
+       "ratio" : "4:3"
+},
+
+
+this gives output multicast of small and medium tile
+
+on scm find the stream name in scales.xml with the multicast IP
+
+less /etc/opt/scaler/scales.xml | grep -b3 239.129.95.223
+
+kill name in SCM GUI
+
