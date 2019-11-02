@@ -1,0 +1,8 @@
+After policykit has been fixed
+
+If Policykit is already fix on a stitcher and you seeing the logevents file grow to over 134 meg do the following command. (polkit service must be running)
+
+systemctl stop collector;systemctl stop kestrel;sleep 3;systemctl start kestrel;systemctl start collector
+
+This will allow the logevents file to process. 
+

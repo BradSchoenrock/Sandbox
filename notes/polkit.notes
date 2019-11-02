@@ -1,0 +1,10 @@
+
+The following permissions need to be changed on the stitcher and then a reboot needs to be performed. 
+
+
+chown -R polkitd:polkitd /etc/polkit-1/localauthority
+chown -R polkitd:polkitd /etc/polkit-1/localauthority.conf.d
+chown polkitd:polkitd /etc/polkit-1/rules.d/49-polkit-pkla-compat.rules
+
+
+
