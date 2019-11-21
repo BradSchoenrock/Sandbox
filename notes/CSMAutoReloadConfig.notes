@@ -1,0 +1,6 @@
+
+
+2019-11-08T16:31:29.112945-07:00 NOTICE csm[42491]: [core] autostart: attempting self-configuration in 12 seconds...
+2019-11-08T16:31:45.362402-07:00 DEBUG csm[42491]: [core] autostart: succeeded with command [/opt/csm/csmconfig, -b=/etc/opt/, -a, -q, -H=127.0.0.1, -P=9099] producing output
+
+
