@@ -1,0 +1,9 @@
+
+to clone HD from sdc to sdb: 
+
+sudo dd if=/dev/sdc of=/dev/sdb bs=64k conv=noerror,sync
+
+to check on progress: 
+
+sudo kill -USR1 <PID>
+
