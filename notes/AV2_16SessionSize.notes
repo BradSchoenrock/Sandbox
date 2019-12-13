@@ -1,0 +1,86 @@
+
+AV 2.11 html5client process
+
+                      ELAPSED        CPU%      RSS(mb)     SIZE(mb)
+count                     874  874.000000   874.000000   874.000000
+mean   0 days 00:39:06.462242    5.614989   460.363254   744.067689
+std    0 days 00:54:03.884045   12.516534   235.365840   356.619767
+min           0 days 00:00:00    0.000000    45.016000    89.824000
+25%    0 days 00:02:41.500000    0.300000   280.316000   461.015000
+50%           0 days 00:20:01    0.800000   343.302000   555.522000
+75%    0 days 00:54:59.750000    4.800000   625.310000  1066.030000
+max           0 days 07:49:03  102.000000  1612.384000  2080.036000
+
+
+
+AV2.16 html5client-v3 process
+
+                      ELAPSED        CPU%     RSS(mb)       SIZE(mb)
+count                     647  647.000000  647.000000     647.000000
+mean   0 days 00:41:36.429675    0.722411   42.501422   91931.165076
+std    0 days 00:53:23.377271    1.237072    8.033163    8377.031783
+min           0 days 00:00:01    0.000000   22.676000   84006.056000
+25%           0 days 00:03:15    0.000000   36.746000   84076.594000
+50%           0 days 00:17:31    0.200000   41.260000   84096.984000
+75%           0 days 01:04:55    0.900000   46.546000  100851.594000
+max           0 days 05:38:21   11.000000   68.404000  100884.672000
+
+
+
+AV2.16 WebKitWeb process
+
+                      ELAPSED        CPU%     RSS(mb)       SIZE(mb)
+count                     656  656.000000  656.000000     656.000000
+mean   0 days 00:40:47.167682    5.752744  266.999585   93440.243201
+std    0 days 00:53:18.367414   13.255115   82.332216    8393.289315
+min           0 days 00:00:01    0.100000   22.256000   84533.872000
+25%           0 days 00:02:50    0.400000  206.010000   85016.358000
+50%    0 days 00:17:30.500000    1.000000  250.402000   86006.644000
+75%    0 days 01:03:40.500000    5.000000  319.057000  101795.888000
+max           0 days 05:39:13  153.000000  979.200000  103066.800000
+
+
+
+AV2.16 WebKitNet process
+
+                      ELAPSED        CPU%     RSS(mb)       SIZE(mb)
+count                     650  650.000000  650.000000     650.000000
+mean   0 days 00:41:14.504615    0.384462   32.740726   92995.586695
+std    0 days 00:53:34.761090    1.134942    1.725015    8394.076171
+min           0 days 00:00:00    0.000000   30.552000   84149.040000
+25%           0 days 00:03:06    0.000000   31.472000   84583.276000
+50%           0 days 00:18:09    0.000000   32.074000   92880.718000
+75%    0 days 01:03:40.750000    0.200000   33.507000  101360.492000
+max           0 days 05:40:03    9.600000   41.704000  101549.928000
+
+
+
+
+AV 2.11
+RSS 460 +- 235
+SIZE 744 +- 356
+
+AV2.16 (RSS only) 
+html5 42 +- 8
+WebkitWeb 266 +- 82
+WebKitNet 32 +- 1
+
+340 +- 82
+
+26% session size
+65% variance reduction
+
+Three usual causes for large virtual memory utalization 
+Swap
+Shared memory use
+allocated but unused memory 
+
+
+
+[bschoenrock@vca033bodcma ~]$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:         128508       12806        2009        5955      113692      108211
+Swap:          4095           0        4095
+[bschoenrock@vca033bodcma ~]$ 
+
+but no swap is being used, and we aren't using 100GB of real memory, so it has to do with webkit/SGUI memory allocation which isn't being used. 

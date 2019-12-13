@@ -10,12 +10,18 @@ McUser1!
 
 
 
-
+To get cust per SGID - 
 
 select count(*) as raw, sdv_sg_id from stb_metadata where db='stlomo' group by sdv_sg_id order by raw desc; 
 
 
- select count(*) as raw, sdv_sg_id, db from stb_metadata where db='knwdmi' OR db='baysmi' OR db='sldlla' OR db='tbdxla' OR db='ashenc' OR db='gsaasc' OR db='stlomo' OR db='escnmi' OR db='madiwi' OR db='stvnwi' OR db='kearne' OR db='rochmn' OR db='stclmn' OR db='kennwa' OR db='medfor' OR db='renonv' group by sdv_sg_id, db order by raw desc;
+select count(*) as raw, sdv_sg_id, db from stb_metadata where db='knwdmi' OR db='baysmi' OR db='sldlla' OR db='tbdxla' OR db='ashenc' OR db='gsaasc' OR db='stlomo' OR db='escnmi' OR db='madiwi' OR db='stvnwi' OR db='kearne' OR db='rochmn' OR db='stclmn' OR db='kennwa' OR db='medfor' OR db='renonv' group by sdv_sg_id, db order by raw desc;
+
+
+
+To translate mac address to IP 
+
+select mac,ip as raw from stb_metadata where mac='A0722CEEC71C';
 
 
 

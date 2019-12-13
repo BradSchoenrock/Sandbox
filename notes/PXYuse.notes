@@ -12,6 +12,12 @@ sudo traffic_ctl metric get proxy.process.hostdb.total_hits
 
 
 
+proxy.config.net.connections_throttle
+
+
+ss -ten | wc -l
+
+ss -ten|grep 3128 |wc -l
 
 -----------------------------
 

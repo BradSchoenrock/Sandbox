@@ -1,0 +1,11 @@
+
+
+log into dbho server and run 
+
+cat /etc/oratab
+
+NEWTCTAMSS:/opt/data/app/oracle/product/12.1.0/dbhome_1:Y
+WORCMAAMSS:/opt/data/app/oracle/product/12.1.0/dbhome_1:Y
+
+SID is NEWTCTAMSS or WORCMAAMSS
+
