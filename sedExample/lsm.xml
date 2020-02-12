@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    LSM Configuration File
+
+    See Operations Guide for details.
+-->
+<csm>
+    <!-- core configuration -->
+    <core>
+        <!-- whether or not to enable logging to syslog -->
+        <syslog>true</syslog>
+        <!-- alternate syslog loghost -->
+        <loghost>localhost</loghost>
+        <!-- port for system statistics and reporting, do not change -->
+        <statisticsPort>7778</statisticsPort>
+        <!-- Session idle timeout -->
+        <sessionInactivityTimeout>7200</sessionInactivityTimeout>
+        <!-- Internal limits -->
+        <limits>
+            <!-- maximum application stack depth -->
+            <stack>50</stack>
+            <!-- maximum no of sessions -->
+            <sessions>1000</sessions>
+            <!-- maximum no of sessions that can be suspended at any time -->
+            <suspendLimit>100</suspendLimit>
+        </limits>
+        <!-- configure a http proxy server -->
+        <!-- always present, but used only when enabled for specific plugins and/or purposes -->
+        <httpProxy>
+            <host>127.0.0.1</host>
+            <port>3128</port>
+        </httpProxy>
+        <!-- Configure connection information for secure data storage, no default -->
+        <!--
+        <secureStorageHost>[secureStorageNode1]:3000,[secureStorageNode2]:3000</secureStorageHost>
+        -->
+        <threadPool>
+            <!--
+                Thread pool settings. The thread pool settings are used as follows:
+
+                effective corePoolSize = min (corePoolSize, workersPerCPU * no of CPU)
+                effective maxPoolSize  = min (maxPoolSize, 5 * workersPerCPU * no of CPU)
+            -->
+            <!-- no of threads to keep in the pool, even if they are idle -->
+            <corePoolSize>50</corePoolSize>
+            <!-- maximum number of threads in the pool -->
+            <maxPoolSize>200</maxPoolSize>
+            <!-- maximum number of worker threads per CPU. These are used for session work only -->
+            <workersPerCPU>10</workersPerCPU>
+        </threadPool>
+
+    </core>
+
+    <cluster>
+        <enabled>false</enabled>
+        <port>11100</port>
+    </cluster>
+
+    <!-- Configuration Manager -->
+    <configurationManager>
+
+        <!-- Interface to listen on for configuration requests -->
+        <listeners type="list">
+            <listener interface="127.0.0.1" port="9098"/>
+        </listeners>
+
+        <!-- Configuration file verification settings -->
+        <verification>
+            <enabled>true</enabled>
+            <nodejs>/usr/bin/node</nodejs>
+            <ccheck>/opt/ccheck/ccheck.js</ccheck>
+            <passOnWarnings>false</passOnWarnings>
+        </verification>
+    </configurationManager>
+
+    <!--
+        Plugin Configuration
+    -->
+    <plugins type="list">
+
+        <plugin active="true">
+            <class>com.activevideo.plugin.jsonstream.JSONStreamPlugin</class>
+            <!-- Listening address -->
+            <interface>0.0.0.0</interface>
+            <!-- port to listen on for incoming requests -->
+            <port>16668</port>
+        </plugin>
+
+        <plugin active="true">
+            <class>com.activevideo.plugin.reporting.KestrelReportingPlugin</class>
+        </plugin>
+
+        <!-- snmp plugin -->
+        <plugin active="true">
+            <class>com.activevideo.plugin.snmp.SnmpPlugin</class>
+            <port>8096</port>
+        </plugin>
+
+        <!--
+            Stitcher Plugin, specifies which HTML5 server and Compositor will be used
+        -->
+        <plugin active="true">
+            <class>com.activevideo.plugin.h5.H5Plugin</class>
+
+            <!-- server port for incoming compositor connections -->
+            <port>5500</port>
+            <!--
+                protocol version restrictions:
+                <minProtocol>1</minProtocol>
+                <maxProtocol>1</maxProtocol>
+            -->
+
+            <!--
+                Cookie support
+            -->
+            <cookies>
+                <!--
+                    <putUrl>: URL used to store cookies
+                    <getUrl>: URL used to retrieve cookies.
+
+                    A [%c] in the URL is replaced with the client's secureId. No default.
+
+                    Example:
+                        <putUrl>http://[cookieserver]/settopdata/put.php?clientid=[%c]</putUrl>
+                        <getUrl>http://[cookieserver]/settopdata/get.php?clientid=[%c]</getUrl>
+                -->
+
+            </cookies>
+
+            <!--
+                Virga/Compositor monitoring
+            -->
+            <healthCheck>
+                <!--
+                    Maximum consecutive duration of health check failures before marking the system as unhealthy
+                    The value is specified in ms. Minimum value is 0, no maximum, default is 30000 (30 seconds)
+                -->
+                <maxDuration>30000</maxDuration>
+                <!--
+                    connection timeout (in ms). Minimum value is 0, no maximum, default 500
+                -->
+                <connectTimeout>500</connectTimeout>
+            </healthCheck>
+
+            <avcdc>
+                <!-- avcdc configuration for SD streams. Please refer to the documention for additional information -->
+                <sd>2</sd>
+                <!-- avcdc configuration for HD streams. Please refer to the documention for additional information -->
+                <hd>3</hd>
+            </avcdc>
+            <html5servers type="list">
+                <html5server prefix="webkit">
+                    <!-- IP address or hostname of the HTML5 server, defaults to global stitcher.xml control interface -->
+                    <!--
+                    <host>127.0.0.1</host>
+                    -->
+                    <!-- Port number on which the HTML5 server will listen for incoming requests -->
+                    <!--
+                    <port>9080</port>
+                    -->
+                </html5server>
+                <!-- configure additional application engines here -->
+            </html5servers>
+            <compositor>
+                <!-- IP address or hostname of the compositor to be used, defaults to global stitcher.xml control interface  -->
+                <host>127.0.0.1</host>
+                <!-- optional, external address of the compositor used for http streaming, defaults to global stitcher.xml streaming interface -->
+                <!--
+                <externalhost>172.16.1.1</externalhost>
+                -->
+                <!-- Port number on which the compositor will listen for incoming requests -->
+                <!--
+                <port>8093</port>
+                -->
+            </compositor>
+        </plugin>
+
+        <plugin active="true">
+            <class>com.activevideo.plugin.fixedstream.FixedStreamServerPlugin</class>
+            <player>/opt/tsplayer/tsplayer</player>
+        </plugin>
+
+    </plugins>
+</csm>

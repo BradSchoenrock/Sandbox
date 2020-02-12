@@ -24,6 +24,9 @@ To translate mac address to IP
 select mac,ip as raw from stb_metadata where mac='A0722CEEC71C';
 
 
+count per RDC (dldctx example)
+
+select count(*) as raw from stb_metadata where db='denttx' OR db='ftwrtx' OR db='spngtx' order by raw desc;
 
 
 \q

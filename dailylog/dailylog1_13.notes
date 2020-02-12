@@ -1,0 +1,53 @@
+
+
+
+
+-----------------------------------
+
+Status Update: 
+
+1/13
+1 hr - fetch stitcher blade counts for POV
+1 hr - monitoring Icinga
+1 hr - hypervisor data review
+1 hr - ntp sync issues in bodcma
+2 hrs - capacity planning hypervisor data collection with teams
+1 hr - data pull for Alan Bui 
+1 hr - stitcher client connect issues & IDR frame messages
+
+1/14
+1 hr - working with cam on capacity/blade procurement/misc
+2 hrs - stale session killer updated for AV2.16 and put back into dldctx
+1 hr - deployment activity meeting 
+1 hr - updates to POV slide deck
+3 hrs - meetings with AV, AV2.16 discussions, and log gathering 
+2 hrs - POV quotes conversations with cam walden alan kristen 
+
+1/15
+2 hrs - OOO 
+1 hr - checking on status of whitelisting and firewall rules for venona redirect
+1 hr - checking on NY lineup status
+1 hr - checking SELinux status in dldctx
+1 hr - chef run on inactive stitchers in dldctx
+2 hrs - discussions and prepping for dldctx deployment 
+1 hr - INC000004293641 VOD STAM 3101
+dldctx deployment, session-count to load based 
+
+1/16 
+1 hr - pxy redirect meeting 
+2 hrs - dldctx load based load balancing outage 
+
+1/17 
+5 hrs - logs to AV & 
+2 hrs - team meeting 
+
+
+
+
+
+-----------------------------------
+
+
+
+
+

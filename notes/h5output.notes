@@ -1,0 +1,27 @@
+[bschoenrock@vca022nvdctn ~]$ sudo h5restartall
+[sudo] password for bschoenrock: 
+**** Dumping H5 system configuration (in directory /root)
+Writing: 20200107_1956__vca022nvdctn.nvdc.tn.charter.com__h5SysconfigInfo.txt
+**** Restarting rsyslog
+Stopping rsyslog
+Starting rsyslog
+**** Restarted rsyslog
+**** Stopping all H5 services
+Stopping virga
+Stopping collector
+Stopping snmpd
+Stopping compositor
+Stopping lsm
+Stopping kestrel
+Stopping trafficserver
+Stopping activevideo-crash-reporter
+**** Starting all H5 services
+Starting trafficserver
+Starting kestrel
+Starting lsm
+Starting compositor
+Starting snmpd
+Starting collector
+Starting virga
+**** Done
+[bschoenrock@vca022nvdctn ~]$ 

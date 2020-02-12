@@ -1,0 +1,10 @@
+
+
+
+ansible twcoh.codc.oh-stitchers -b -m shell -a 'curl -v https://v-collector.dp.aws.charter.com/api/collector'
+￼
+￼
+ansible twcoh.codc.oh-stitchers -b -m shell -a 'curl -v https://v-collector-internal.dp.aws.charter.com/api/collector'
+
+
+
