@@ -19,6 +19,14 @@ select count(*) as raw, sdv_sg_id, db from stb_metadata where db='knwdmi' OR db=
 
 
 
+
+
+select count(*) as raw, sdv_sg_id from stb_metadata where db='ashenc' OR db='gsaasc' group by sdv_sg_id order by raw desc; 
+
+
+
+
+
 To translate mac address to IP 
 
 select mac,ip as raw from stb_metadata where mac='A0722CEEC71C';
@@ -65,90 +73,103 @@ or to create a csv of lineup 80:
 
 
 
-grep "using stream resource" /var/log/cloudtv.log* | cut -d ":" -f 24 | cut -d "," -f 1
-
-
-
-
-ansible csm1*.charter.com -m shell -a "scp wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/CustomersPerSGID.sh /home/bschoenrock" | grep asdf
-
-ansible csm1*.charter.com -m shell -a "rm /home/bschoenrock/thing*; bash /home/bschoenrock/CustomersPerSGID.sh > thing.txt" | grep asdf
-
-
-
-ansible csm*.charter.com -m shell -a "sed -i 's/22/25/g' /home/bschoenrock/CustomersPerSGID.sh; rm /home/bschoenrock/thing.txt; bash /home/bschoenrock/CustomersPerSGID.sh > thing.txt" | grep asdf
 
 
 
 
 
 
+select count(*) as raw from stb_metadata where db='worcma' order by raw desc; 
+select count(*) as raw from stb_metadata where db='wilnc' order by raw desc; 
+select count(*) as raw from stb_metadata where db='wetal' order by raw desc; 
+select count(*) as raw from stb_metadata where db='trictn' order by raw desc; 
+select count(*) as raw from stb_metadata where db='tpffl' order by raw desc; 
+select count(*) as raw from stb_metadata where db='tpbfl' order by raw desc; 
+select count(*) as raw from stb_metadata where db='tbdxla' order by raw desc; 
+select count(*) as raw from stb_metadata where db='syrny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='stvnwi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='stlomo' order by raw desc; 
+select count(*) as raw from stb_metadata where db='stiny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='stclmn' order by raw desc; 
+select count(*) as raw from stb_metadata where db='stckga' order by raw desc; 
+select count(*) as raw from stb_metadata where db='spngtx' order by raw desc; 
+select count(*) as raw from stb_metadata where db='smnny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='slotca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='sldlla' order by raw desc; 
+select count(*) as raw from stb_metadata where db='sldcmo' order by raw desc; 
+select count(*) as raw from stb_metadata where db='sfvca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='sdgca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='saxtx' order by raw desc; 
+select count(*) as raw from stb_metadata where db='rtxtx' order by raw desc; 
+select count(*) as raw from stb_metadata where db='rochmn' order by raw desc; 
+select count(*) as raw from stb_metadata where db='renonv' order by raw desc; 
+select count(*) as raw from stb_metadata where db='reddca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='rchny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='ralnc' order by raw desc; 
+select count(*) as raw from stb_metadata where db='qunny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='porme' order by raw desc; 
+select count(*) as raw from stb_metadata where db='ocihi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='ocfca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='nmnny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='newtct' order by raw desc; 
+select count(*) as raw from stb_metadata where db='newnga' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mw3ky' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mw2ky' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mw1oh' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mtnamt' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mpksca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mpkhca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mkewi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='medfor' order by raw desc; 
+select count(*) as raw from stb_metadata where db='mddcwi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='madiwi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='lncne' order by raw desc; 
+select count(*) as raw from stb_metadata where db='leedal' order by raw desc; 
+select count(*) as raw from stb_metadata where db='kscmo' order by raw desc; 
+select count(*) as raw from stb_metadata where db='knwdmi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='kennwa' order by raw desc; 
+select count(*) as raw from stb_metadata where db='kearne' order by raw desc; 
+select count(*) as raw from stb_metadata where db='jacktn' order by raw desc; 
+select count(*) as raw from stb_metadata where db='ineca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='indin' order by raw desc; 
+select count(*) as raw from stb_metadata where db='hwdca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='hvnny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='gwinga' order by raw desc; 
+select count(*) as raw from stb_metadata where db='gsonc' order by raw desc; 
+select count(*) as raw from stb_metadata where db='gsaasc' order by raw desc; 
+select count(*) as raw from stb_metadata where db='grdca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='ftwrtx' order by raw desc; 
+select count(*) as raw from stb_metadata where db='escnmi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='detmi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='denttx' order by raw desc; 
+select count(*) as raw from stb_metadata where db='delfl' order by raw desc; 
+select count(*) as raw from stb_metadata where db='daltx' order by raw desc; 
+select count(*) as raw from stb_metadata where db='cscsc' order by raw desc; 
+select count(*) as raw from stb_metadata where db='cowymt' order by raw desc; 
+select count(*) as raw from stb_metadata where db='cltnc' order by raw desc; 
+select count(*) as raw from stb_metadata where db='cleoh' order by raw desc; 
+select count(*) as raw from stb_metadata where db='clboh' order by raw desc; 
+select count(*) as raw from stb_metadata where db='cinoh' order by raw desc; 
+select count(*) as raw from stb_metadata where db='canoh' order by raw desc; 
+select count(*) as raw from stb_metadata where db='bufny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='bngny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='bknny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='birmal' order by raw desc; 
+select count(*) as raw from stb_metadata where db='bhmal' order by raw desc; 
+select count(*) as raw from stb_metadata where db='baysmi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='bakca' order by raw desc; 
+select count(*) as raw from stb_metadata where db='austx' order by raw desc; 
+select count(*) as raw from stb_metadata where db='augme' order by raw desc; 
+select count(*) as raw from stb_metadata where db='ashenc' order by raw desc; 
+select count(*) as raw from stb_metadata where db='allnmi' order by raw desc; 
+select count(*) as raw from stb_metadata where db='alcotn' order by raw desc; 
+select count(*) as raw from stb_metadata where db='albny' order by raw desc; 
+select count(*) as raw from stb_metadata where db='aabfl' order by raw desc; 
 
 
 
 
-24
-scp csm11sldcmo.sldc.mo.charter.com:/home/bschoenrock/thing.txt thing11sldcmo.txt
-scp csm12sldcmo.sldc.mo.charter.com:/home/bschoenrock/thing.txt thing12sldcmo.txt
-scp csm13sldcmo.sldc.mo.charter.com:/home/bschoenrock/thing.txt thing13sldcmo.txt
+total footprint: 
 
+select count(*) as raw from stb_metadata where db='worcma' OR db='wilnc' OR db='trictn' OR db='tpffl' OR db='tpbfl' OR db='tbdxla' OR db='syrny' OR db='stvnwi' OR db='stlomo' OR db='stiny' OR db='stclmn' OR db='stckga' OR db='spngtx' OR db='smnny' OR db='slotca' OR db='sldlla' OR db='sldcmo' OR db='sfvca' OR db='sdgca' OR db='saxtx' OR db='rtxtx' OR db='rochmn' OR db='renonv' OR db='reddca' OR db='rchny' OR db='ralnc' OR db='qunny' OR db='porme' OR db='ocihi' OR db='ocfca' OR db='nmnny' OR db='newtct' OR db='newnga' OR db='mw3ky' OR db='mw2ky' OR db='mw1oh' OR db='mtnamt' OR db='mpksca' OR db='mpkhca' OR db='mkewi' OR db='medfor' OR db='mddcwi' OR db='madiwi' OR db='lncne' OR db='leedal' OR db='kscmo' OR db='knwdmi' OR db='kennwa' OR db='kearne' OR db='jacktn' OR db='ineca' OR db='indin' OR db='hwdca' OR db='hvnny' OR db='gwinga' OR db='gsonc' OR db='gsaasc' OR db='grdca' OR db='ftwrtx' OR db='escnmi' OR db='detmi' OR db='denttx' OR db='delfl' OR db='daltx' OR db='cscsc' OR db='cowymt' OR db='cltnc' OR db='cleoh' OR db='clboh' OR db='cinoh' OR db='canoh' OR db='bufny' OR db='bngny' OR db='bknny' OR db='birmal' OR db='bhmal' OR db='baysmi' OR db='bakca' OR db='austx' OR db='augme' OR db='ashenc' OR db='allnmi' OR db='alcotn' OR db='albny' OR db='aabfl' order by db, raw desc;
 
-22
-scp csm11sldcla.sldc.la.charter.com:/home/bschoenrock/thing.txt thing11sldcla.txt
-scp csm12sldcla.sldc.la.charter.com:/home/bschoenrock/thing.txt thing12sldcla.txt
-scp csm13sldcla.sldc.la.charter.com:/home/bschoenrock/thing.txt thing13sldcla.txt
-
-scp csm11pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing11pldcor1.txt
-scp csm12pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing12pldcor1.txt
-scp csm13pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing13pldcor1.txt
-
-
-25
-scp csm11renonv.reno.nv.charter.com:/home/bschoenrock/thing.txt thing11renonv.txt
-scp csm12renonv.reno.nv.charter.com:/home/bschoenrock/thing.txt thing12renonv.txt
-scp csm13renonv.reno.nv.charter.com:/home/bschoenrock/thing.txt thing13renonv.txt
-
-scp csm11spdcsc.spdc.sc.charter.com:/home/bschoenrock/thing.txt thing11spdcsc.txt
-scp csm12spdcsc.spdc.sc.charter.com:/home/bschoenrock/thing.txt thing12spdcsc.txt
-scp csm13spdcsc.spdc.sc.charter.com:/home/bschoenrock/thing.txt thing13spdcsc.txt
-
-scp csm11knwdmi.knwd.mi.charter.com:/home/bschoenrock/thing.txt thing11knwdmi.txt
-scp csm12knwdmi.knwd.mi.charter.com:/home/bschoenrock/thing.txt thing12knwdmi.txt
-scp csm13knwdmi.knwd.mi.charter.com:/home/bschoenrock/thing.txt thing13knwdmi.txt
-
-scp csm11mddcwi.mddc.wi.charter.com:/home/bschoenrock/thing.txt thing11mddcwi.txt
-scp csm12mddcwi.mddc.wi.charter.com:/home/bschoenrock/thing.txt thing12mddcwi.txt
-scp csm13mddcwi.mddc.wi.charter.com:/home/bschoenrock/thing.txt thing13mddcwi.txt
-
-scp csm11edprmn.edpr.mn.charter.com:/home/bschoenrock/thing.txt thing11edprmn.txt
-scp csm12edprmn.edpr.mn.charter.com:/home/bschoenrock/thing.txt thing12edprmn.txt
-scp csm13edprmn.edpr.mn.charter.com:/home/bschoenrock/thing.txt thing13edprmn.txt
-
-scp csm11pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing11pldcor2.txt
-scp csm12pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing12pldcor2.txt
-scp csm13pldcor.pldc.or.charter.com:/home/bschoenrock/thing.txt thing13pldcor2.txt
-
-
-
-1.618Atlas
-
-
-
-
-cat thing1[1-3]renonv.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > renonvResults.txt
-
-cat thing1[1-3]spdcsc.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > spdcscResults.txt
-
-cat thing1[1-3]knwdmi.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > knwdmiResults.txt
-
-cat thing1[1-3]mddcwi.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > mddcwiResults.txt
-
-cat thing1[1-3]edprmn.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > edprmnResults.txt
-
-cat thing1[1-3]sldcmo.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > sldcmoResults.txt
-
-cat thing1[1-3]sldcla.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > sldclaResults.txt
-
-cat thing1[1-3]pldcor1.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > pldcorResults1.txt
-
-cat thing1[1-3]pldcor2.txt | sort | uniq | cut -d "-" -f 1 | uniq -c | sort -n > pldcorResults2.txt

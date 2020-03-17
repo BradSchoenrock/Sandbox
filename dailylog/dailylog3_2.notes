@@ -1,0 +1,49 @@
+
+
+
+
+-----------------------------------
+
+Status Update: 
+
+3/2
+updating growth stitcher capacity & working psql
+pxy discussions with thomas & RTS
+stitcher meeting with alan
+
+3/3
+pxy discussions
+tn vod outage
+rts discussions
+
+3/4
+discussion with D Laz on error rates in prime time
+discussion on cloudforms with ben duca & teja & tyson
+decision tree (meeting)
+review of SIT testing & MOP
+
+3/5
+maint window engaged to find out twctx wasn't firewalled correctly 
+recovered stitchers in slotca after reboot
+helped with twctx deployment
+
+3/6
+follow up on maint window, firewall
+INC with kaushik for load alarms in pxy03 twctx (trafficserver)
+follow up with laz on errors
+
+3/7
+twcoh mop
+SGUI RTS MOP handoff and test results 
+decision tree
+cloudforms meeting
+twctx pxy load investigations
+
+
+
+-----------------------------------
+
+
+
+
+

@@ -8,3 +8,38 @@ ansible twcoh.codc.oh-stitchers -b -m shell -a 'curl -v https://v-collector-inte
 
 
 
+
+
+3/17
+
+Internal
+spdcsc
+slotca
+pldcor
+ladcca
+edprmn
+sldcla
+mddcwi
+dldctx
+nvdctn
+knwdmi
+twctx
+bodcma
+sldcmo
+bhdcal
+renonv
+
+External
+bhnca
+bhnfl
+bhnoh
+bhnal
+twcoh
+twchi
+twcny.sydc
+twcny.nydc
+twcca
+twcsc
+
+Neither
+blngmt
