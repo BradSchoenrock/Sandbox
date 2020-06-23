@@ -1,0 +1,23 @@
+
+found in twcca, these errors in all 2.16 markets 
+
+
+
+
+2020-03-23T23:00:12.294369+00:00 INFO csm[22107]: [xid@1192 xid=NkqAT33KzzD cid=Arris-210_00000B41D00C did=] encryption request not handled, but optional, continuing without encryption
+
+2020-03-23T23:00:20.813772+00:00 WARNING csm[22107]: [xid@1192 xid=NkqAT33KzzD cid=Arris-210_00000B41D00C did= name=RfbPlugin] client tuning failed: 31 : failed to decode the stream , closing current application [ControllerStateMachine.receivedStreamFailure]
+
+2020-03-23T23:00:20.813815+00:00 WARNING csm[22107]: [xid@1192 xid=NkqAT33KzzD cid=Arris-210_00000B41D00C did= name=RfbPlugin] stream failure, closing current application [ControllerStateMachine.receivedStreamFailure]
+
+
+
+
+
+2020-03-23T22:57:08.587721+00:00 INFO csm[22107]: [xid@1192 xid=TILZh1CnzzD cid=Humax-210_B0B3ADCB9ED8 did=] encryption request not handled, but optional, continuing without encryption
+
+2020-03-23T23:00:23.392945+00:00 WARNING csm[22107]: [xid@1192 xid=TILZh1CnzzD cid=Humax-210_B0B3ADCB9ED8 did= name=RfbPlugin] client tuning failed: 255 : unspecified error , closing current application [ControllerStateMachine.receivedStreamFailure]
+
+
+
+

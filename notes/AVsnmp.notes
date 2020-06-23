@@ -1,0 +1,52 @@
+
+
+
+
+while [ true ]; do snmpwalk -v2c -c public localhost 1.3.6.1.4.1.1192.1.1.1; echo "*****"; sleep 1; done 
+
+while [ true ]; do snmpwalk -v2c -c public localhost 1.3.6.1.4.1.1192.1.1.11; echo "*****"; sleep 1; done 
+
+while [ true ]; do snmpwalk -v2c -c public localhost 1.3.6.1.4.1.1192.1.1.14; echo "*****"; sleep 1; done 
+
+
+
+
+snmpwalk -v2c -c public localhost 1.3.6.1.4.1.1192
+
+
+
+
+Some informed guesses -
+
+1.1.1 looks like an integer representation of health
+1.1.2 looks like a mac address, but i'm not sure what of
+1.1.3 is uptime
+1.1.4 is active sessions 
+1.1.5 is a 1000, likely a units thing 
+1.1.9 is suspended sessions 
+1.1.7, 1.1.8, 1.1.15 appear to be dummy zeros
+
+i don't know what 1.1.6 is.
+
+￼
+￼
+￼
+￼
+￼
+￼
+that one confuses me
+
+SNMPv2-SMI::enterprises.1192.1.1.1.6.0 = Counter64: 487742
+
+    <variable oid=".1.3.6.1.4.1.1192.1.1.1" method="xml_component_status" name="lsm">
+
+
+    <variable oid=".1.3.6.1.4.1.1192.1.1.2" method="xml_component_status" name="udc">
+
+
+
+    <variable oid=".1.3.6.1.4.1.1192.1.1.11" method="load_balancer_agent" name="lbagent">
+
+    <variable oid=".1.3.6.1.4.1.1192.1.1.14" method="load_balancer_agent2" name="lbagent2">
+
+
