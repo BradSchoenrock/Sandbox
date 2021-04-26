@@ -1,17 +1,8 @@
 
 
 
-sudo logrotate -vf /etc/logrotate.d/cloudtv 
+logrotate -vf /etc/logrotate.d/cloudtv 
 
-sudo logrotate -vf /etc/logrotate.d/squid
-
-sudo logrotate -vf /etc/logrotate.d/*
-
-logrotate -vf /etc/logrotate.d/tomcat-catalina
-
-logrotate -vf /etc/logrotate.d/tomcat-catalina;logrotate -vf /etc/logrotate.d/tomcat-catalina
-
-sudo logrotate -vf /etc/logrotate.d/cloudtv 
 
 
 par45 & par 46 sldcmo have changes in 

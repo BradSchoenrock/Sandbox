@@ -1,0 +1,5 @@
+Cant SSH or SUDO 
+
+
+service sssd stop ; rm -f /var/lib/sss/db/* ; service sssd start
+

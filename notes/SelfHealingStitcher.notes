@@ -1,0 +1,32 @@
+
+
+'''
+
+ansible vca0[0-6][0-9]pldcor.pldc.or.charter.com -m shell -a 'scp bschoenrock@wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/Stitcher_Recovery_Scripts/Stale*.sh /home/bschoenrock'
+ansible vca0[0-6][0-9]pldcor.pldc.or.charter.com -m shell -a 'scp bschoenrock@wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/Stitcher_Recovery_Scripts/MarioQAM.sh /home/bschoenrock'
+ansible vca0[0-6][0-9]pldcor.pldc.or.charter.com -m shell -a 'scp bschoenrock@wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/Stitcher_Recovery_Scripts/checkLogstash.sh /home/bschoenrock'
+
+ansible vca0[0-6][0-9]pldcor.pldc.or.charter.com -b -m shell -a 'cp /home/bschoenrock/MarioQAM.sh /root'
+ansible vca0[0-6][0-9]pldcor.pldc.or.charter.com -b -m shell -a 'cp /home/bschoenrock/StaleSession216.sh /etc/cron.hourly'
+ansible vca0[0-6][0-9]pldcor.pldc.or.charter.com -b -m shell -a 'cp /home/bschoenrock/checkLogstash.sh /etc/cron.hourly'
+
+ansible vca0[0-6][0-9]pldcor.pldc.or.charter.com -b -m shell -a 'echo "*/10 * * * * bash /root/MarioQAM.sh" > /home/bschoenrock/tmp.txt; crontab /home/bschoenrock/tmp.txt; rm /home/bschoenrock/tmp.txt'
+
+'''
+
+
+
+
+
+ansible vca*slotca.pldc.or.charter.com -m shell -a 'scp bschoenrock@wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/Stitcher_Recovery_Scripts/StaleSession216*.sh /home/bschoenrock; scp bschoenrock@wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/Stitcher_Recovery_Scripts/MarioQAM.sh /home/bschoenrock; scp bschoenrock@wrk01pvdcco.pvdc.co.charter.com:/home/bschoenrock/Stitcher_Recovery_Scripts/checkLogstash.sh /home/bschoenrock'
+
+ansible vca*slotca.pldc.or.charter.com -b -m shell -a 'cp /home/bschoenrock/MarioQAM.sh /root; cp /home/bschoenrock/StaleSession216.sh /etc/cron.hourly; cp /home/bschoenrock/checkLogstash.sh /etc/cron.hourly'
+
+ansible vca*slotca.pldc.or.charter.com -b -m shell -a 'echo "*/10 * * * * bash /root/MarioQAM.sh" > /home/bschoenrock/tmp.txt; crontab /home/bschoenrock/tmp.txt; rm /home/bschoenrock/tmp.txt'
+
+
+
+
+
+
+

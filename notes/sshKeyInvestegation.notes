@@ -1,0 +1,57 @@
+
+
+
+
+Login to AMS01:
+1.    Stop the tomcat service on AMS01
+Ø    sudo service tomcat stop
+2.    Make sure the process is not running 
+Ø    ps -ef | grep tomcat 
+                       2.1 . If the process is still running, kill the process 
+Ø    sudo kill -9 <pid>
+3.    Start the tomcat service
+Ø    Sudo service tomcat start
+4.    Make sure the process is running 
+Ø    ps -ef | grep tomcat 
+5.    Make sure hazelcast is returning both nodes  before moving to 2nd AMS 
+     curl  http://localhost:5701/hazelcast/rest/cluster
+Login to AMS02:
+      
+         Repeat the same procedures. 
+
+
+
+
+
+
+
+
+
+ssh key commands - 
+
+
+ssh-keygen -t rsa -f /home/bschoenrock/.ssh/id_rsa_RollTom -N ""
+
+sed -i '1s/^/command="bash \/home\/bschoenrock\/RollTom.sh ${SSH_ORIGINAL_COMMAND: -7}" /' /home/bschoenrock/.ssh/id_rsa_RollTom.pub
+
+ssh-copy-id -i id_rsa_RollTom.pub bschoenrock@ams02austx.dldc.tx.charter.com
+ssh-copy-id -i id_rsa_RollTom.pub bschoenrock@ams01austx.dldc.tx.charter.com
+
+command="bash /home/bschoenrock/RollTom.sh ${SSH_ORIGINAL_COMMAND: -7}" ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwrtU514XyB59ORoxkP3CfyAta9WhDCjLka4ivnu92aM8HRIQE0PdSKB/eLhzV++ql8p+G9TdIwFyUmkxkdPfY5liicfhBvnHEEHVgWJ9SdMn7exeQyzQdEabrAuu/m2gVQEVuVvB3nbWpLpccfow1PCRelpFu4TsUCPoHrofFijQHUt5Y8nfFBf03XAt1ptSNXfcs5zYfx1HWz8dUeXC2F/NOkRe5bC6kpiTObVULhYotfCl4Cc7QSUfXdGxsZpaDpPgimDWH0KuRiktyK/JrqiS3uDkkmlx0qX2Ghl/x7d3LPQ5kr/MSI0rz9yqV7S6DGgG4bAba0rjnUL04BV9hw== bschoenrock@ams01austx.dldc.tx.charter.com
+
+
+
+
+
+ssh-keygen -t rsa -f /root/.ssh/id_rsa_RollTom -N ""
+
+sed -i '1s/^/command="bash \/home\/bschoenrock\/RollTom.sh ${SSH_ORIGINAL_COMMAND: -7}" /' /root/.ssh/id_rsa_RollTom.pub
+
+ssh-copy-id -i id_rsa_RollTom.pub bschoenrock@ams02austx.dldc.tx.charter.com
+ssh-copy-id -i id_rsa_RollTom.pub bschoenrock@ams01austx.dldc.tx.charter.com
+
+command="bash /home/bschoenrock/RollTom.sh ${SSH_ORIGINAL_COMMAND: -7}" ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwrtU514XyB59ORoxkP3CfyAta9WhDCjLka4ivnu92aM8HRIQE0PdSKB/eLhzV++ql8p+G9TdIwFyUmkxkdPfY5liicfhBvnHEEHVgWJ9SdMn7exeQyzQdEabrAuu/m2gVQEVuVvB3nbWpLpccfow1PCRelpFu4TsUCPoHrofFijQHUt5Y8nfFBf03XAt1ptSNXfcs5zYfx1HWz8dUeXC2F/NOkRe5bC6kpiTObVULhYotfCl4Cc7QSUfXdGxsZpaDpPgimDWH0KuRiktyK/JrqiS3uDkkmlx0qX2Ghl/x7d3LPQ5kr/MSI0rz9yqV7S6DGgG4bAba0rjnUL04BV9hw== bschoenrock@ams01austx.dldc.tx.charter.com
+
+
+
+

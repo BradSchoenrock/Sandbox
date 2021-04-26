@@ -1,3 +1,6 @@
+;; This buffer is for notes you don't want to save, and for Lisp evaluation.
+;; If you want to create a file, visit that file with C-x C-f,
+;; then enter the text in that file's own buffer.
 
 
 
@@ -9,108 +12,4 @@ sudo traffic_ctl metric get proxy.node.restarts.manager.start_time
 date --date='@1565583594'
 
 sudo traffic_ctl metric get proxy.process.hostdb.total_hits
-
-
-
-proxy.config.net.connections_throttle
-
-
-ss -ten | wc -l
-
-ss -ten|grep 3128 |wc -l
-
------------------------------
-
-
-
-
-
-> The list of things that you want to be tested.
-
-This is part of the discussion that we would like SEOps and SIT input on as well as input from FE team who are working out expected sports experience ATS usage. 
-
-The things we've identified as potential changes to be tested - 
-
-​AerospikeDB size​ (20-36GB)
-AerospikeDB TTL setting to delete entries so stale tokens don't keep getting called (29 day TTL) 
-TrafficserverDB size (15-32GB)
-TrafficserverDB TTL setting to enforce a max TTL for caching (24 hrs) 
-TrafficserverDB Max entry size setting to avoid caching large entries (100 MB) 
-TrafficserverDB activating negative caching to avoid multiple calls to failing or non-responsive endpoints (lifetime 10 sec) 
-TrafficserverDB disable the ignore client no chache header setting so that ATS observes no-cache headers when they are provided 
-
-If you've got any other suggestions or think thresholds should be changed we can work with that. Several of these thresholds are best guesses based on ATS performance, expected performance of the sports experience feature, and some application specific TTL settings which are invisible to us in VidOps, so any input is appreciated. 
-
-I can provide a sample records.config files once we are agreeable on changes so we are sure we are using prod settings/clean sets of changes when testing. 
-
-The bigger challenge here is for Anshuman & company to get accurate testing. Even if i provide ATS settings, replicating production's usage of ATS isn't just a matter of configurations but also one of scale to simulate the number of calls. The results of testing & replication of production may only be able to be uncovered at scale with a variety of different calls & endpoints each with its own settings, but maybe Anshuman has some ideas here. 
-
-In the end we are looking for some reassurance that whatever changes we settle on don't have unintended consequences given current application designs, while also making the system more robust against future changes/features which would have the potential to cause impact. An ounce of prevention and all that.... 
-
------------------------------
-
-Links to trafficserver behaviour on no-cache directives & clarification. 
-
-https://docs.trafficserver.apache.org/en/latest/admin-guide/configuration/cache-basics.en.html
-
-https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.config.en.html?highlight=ignore_client_no_cache#proxy.config.http.cache.ignore_client_no_cache
-
-> By default, Traffic Server strictly observes client Cache-Control: no-cache directives. If a requested object contains a no-cache header, then Traffic Server forwards the request to the origin server even if it has a fresh copy in cache.
-
-So if the no-cache header is being being observed then no TCP_HIT or TCP_MISS is recorded since the request bypasses the cache entirely & goes straight to the origin server. 
-
-I have to clarify this because it looks like we are observing server no-cache headers, but not client no-cache headers. It's confusing that it is configured that way, maybe we should change that too (added it to the above list). 
-
-CONFIG proxy.config.http.cache.ignore_client_no_cache INT 1
-CONFIG proxy.config.http.cache.ignore_server_no_cache INT 0
-
-since we are ignoring client no-cache headers we are strictly observing the TTL set by the client, which if left unset would default to no TTL (lives until it is pushed out because cache is full) instead of the client apparent intended behaviour (don't cache). 
-
----
-
-> PXY HIT/MISS ratio by methodPath/endpoint( will probably require crunching PXY logs).
-
-I grabbed ~10 min worth of squid.blog output from sldcmo as an example. I saved matches of "TCP_". Results - 
-
-51468 "TCP_" 
-
-1929 "TCP_HIT" 
-
-41589 "TCP_MISS" 
-
-771 "TCP_REFRESH_MISS" 
-
-289 "TCP_REFRESH_HIT" 
-
-3078 "TCP_IMS_HIT" 
-
-3781 "TCP_IMS_MISS" 
-
-31 "TCP_MEM_HIT" 
-
-TCP_HIT/TCP_MISS = 4.6% (worse than last i checked, which was closer to 10%, either way this isn't a great result.) 
-
-Meaning of those logs are documented here: 
-
-https://docs.trafficserver.apache.org/en/latest/admin-guide/logging/cache-results.en.html
-
-> A high ratio of TCP_MISS to TCP_HIT events can indicate that your cache is sized too small and objects are being evicted too quickly for your Traffic Server cache to reduce traffic to your origin servers - largely defeating the purpose of having a caching layer at all. 
-
-The document doesn't set thresholds for what a high miss ratio means, but 4.6% hit ratio doesn't seem good to me. 
-
-Hit/Miss ratio by endpoint: I'm not sure if this is going to especially helpful, but here goes - 
-
-Grabbed all endpoints with either a TCP_HIT or TCP_MISS lines and counted their Hits/Misses - See attached for full listing. 
-
-Biggest offender is "v-collector-internal.dp.aws.charter.com" which accounts for 32692 misses / 0 hits.
-
-Second thing i recognize is the weather app which i don't think is being used (why don't we have this turned off?), that accounts for 1093 misses / 0 hits. 
-
-Excluding those two obvious cases that brings the HIT/MISS ratio to just under 25%. That's still not good. 
-
-Maybe you can identify more of these endpoints which are/aren't relevant, but there you have it. 
-
-
-
-
 

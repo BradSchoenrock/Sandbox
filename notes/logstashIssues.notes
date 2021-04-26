@@ -1,0 +1,35 @@
+About a week ago i took a look and saw gaps in logging from ams on the following nodes (incomplete list) 
+
+ams01austx
+ams02austx
+ams01rtxtx
+ams02rtxtx
+ams02ftwth
+ams02sfvca 
+ams01sfvca (completely missing?) 
+ams01ralnc
+ams04mddcwi
+ams03sldcmo
+ams01sldcmo
+ams04medfor
+ams01rchny
+ams02kscmo
+ams01cinoh
+ams02cinoh
+ams01cleoh
+ams02cleoh
+
+
+
+
+
+Could you elaborate on your comment 
+
+"My understanding is that this behavior could be a result of buggy Logstash."
+
+What known issues? What bugs? What triggers that bug? What version was that bug fixed in? 
+
+Could you also investigate the load on the logstash processing servers to ensure they are not being overwhelmed. 
+
+
+

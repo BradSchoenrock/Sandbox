@@ -1,0 +1,27 @@
+
+
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i renoStitcherList.txt
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i spdcscStitcherList.txt
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i sldcmoStitcherList.txt
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i sldclaStitcherList.txt
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i knwdStitcherList.txt
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i mddcStitcherList.txt
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i edprmnStitcherList.txt
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i pldcorStitcherList.txt
+
+
+ansible-playbook -b noSessions/noSessions_deploy.yml -k -i renoStitcherList.txt
+ansible-playbook -b Mario/MarioQAM_deploy.yml -k -i renoStitcherList.txt
+
+ansible-playbook -b StaleSessoins216/StaleSession216_deploy.yml -k -i AllStitchers.txt
+ansible-playbook -b checkLogstash/checkLogstash_deploy.yml -k -i AllStitchers.txt
+
+
+ansible vca*spdcsc.spdc.sc.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'
+ansible vca*sldcmo.sldc.mo.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'
+ansible vca*sldcla.sldc.la.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'
+ansible vca*knwdmi.knwd.mi.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'
+ansible vca*edprmn.edpr.mn.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'
+ansible vca*mddcwi.mddc.wi.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'
+ansible vca*pldcor.pldc.or.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'
+ansible vca*renonv.reno.nv.charter.com -b -m shell -a 'echo "" > /tmp/out.txt; crontab /tmp/out.txt'

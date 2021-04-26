@@ -1,0 +1,116 @@
+
+
+
+0 - sucess - keep going 
+1 - exit with message to user indicating them to retry after 1 min
+2 - exit with message to page on call to debug tomcat on node that failed
+3 - retry once, exit if it exits 3 again with message to page on call
+4 - check hazelcast for next 60 sec, if node joined continue with procedure. Else exit. 
+5 - move on to next node in rolling procedure, want to discuss this case further with the team 
+6 - need to roll nodes in different order, since we are supposed to have at least 2 need to do one that is active but not in cluster first
+7 - if hazelcast is responding on wrk01 retry once, exit if it exits 7 again. If hazelcast not responding on wrk01, exit with message to fix hazelcast
+
+
+***********************************
+
+
+echo "$(date +"%Y-%m-%d %H:%M:%S.%3N") WARN  host $(hostname) is behind in sending AM Data." >> /var/log/tomcat/catalina.out
+        echo "$(date +"%Y-%m-%d %H:%M:%S.%3N") WARN  here is where we will restart tomcat with jenkins job" >> /var/log/tomcat/catalina.out
+
+---------------
+
+echo "$(date +"%Y-%m-%d %H:%M:%S.%3N") WARN  system $(hostname) has db connections out of bounds (number of connections is $nConnect) " >> /var/log/tomcat/catalina.out
+                echo "$(date +"%Y-%m-%d %H:%M:%S.%3N") WARN  here is where we will restart tomcat with jenkins job" >> /var/log/tomcat/catalina.out
+		envName=getEnvName
+
+---------------
+
+echo "$(date +"%Y-%m-%d %H:%M:%S.%3N") WARN  system $(hostname) has been quarantined by remote system" >> /var/log/tomcat/catalina.out
+                echo "$(date +"%Y-%m-%d %H:%M:%S.%3N") WARN  here is where we will restart tomcat with jenkins job" >> /var/log/tomcat/catalina.out
+
+
+
+
+***********************************
+
+
+
+ams01grdca
+10/8 21:40-23:20 db connections
+
+ams01mtnamt
+10/9 16:10-17:20 quarantined
+
+ams01gsonc
+10/10 21:30-23:10 quarantined
+
+ams01wilnc
+10/10 22:10-23:10 quarantined
+
+ams02mw1oh
+10/11 05:50-12:50 quarantined
+
+ams01rtxtx
+10/9 04:40-05:20 db connections
+10/10 04:40-05:20 db connections
+10/12 04:40-5:20 db connections
+
+ams02rtxtx
+10/9 04:40-05:20 db connections
+10/10 04:40-05:20 db connections
+10/12 04:40-5:20 db connections
+
+
+***********************************
+
+
+
+
+wget -q --no-check-certificate --auth-no-challenge --http-user=jenkins-exec --http-password=zK4uvoEYhKMaUIlz "http://jenkins.vo.charter.com/job/ams_tomcat_restart/buildWithParameters?token=11352a1a47ae1ac8f471399e7fcfe42955&chefEnvironment=NULL-EMPTY-CHANGEME”
+
+
+		stck )
+                echo "one"
+                envName="bhdcal-ams_tsb-stck"
+                ;;
+        bhm )
+                echo "two"
+                envName="bhnal-ams_tsb-bhm"
+                ;;
+        wet )
+                echo "three"
+                envName="bhnal-ams_tsb-wet"
+                ;;
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+***********************************
+
+echo "# testing self healing script for AM data send" > /etc/cron.d/selfHealTest_AMDataSend;
+
+echo "0 0,8,16 * * * root bash /home/bschoenrock/checkAMDataSend.sh" >> /etc/cron.d/selfHealTest_AMDataSend;
+
+echo "# self healing test to check for quarantine messages" > /etc/cron.d/selfHealTest_Quarantine;
+
+echo "0 * * * * root bash /home/bschoenrock/checkQuarantine.sh" >> /etc/cron.d/selfHealTest_Quarantine
+
+
+
+ /home/bschoenrock/SelfHealingTomcat.notes
+ 
+ 
+ 
+ ansible ams*.charter.com -b -m shell -a 'echo "# testing self healing script for AMS DB connections" > /etc/cron.d/selfHealTest_Connections; echo "*/20 * * * * root bash /home/bschoenrock/checkConnectionsAMS.sh" >> /etc/cron.d/selfHealTest_Connections'
+ 
+ 
+ 
+ 
+ su - oracle -c "echo exit | /opt/data/app/oracle/product/12.1.0/dbhome_1/bin/sqlplus / as sysdba @bin/getAmsSessions.sql | grep \"charter.com\" | tr -s \" \" | sed 's/[0-9] /\n&/g'"

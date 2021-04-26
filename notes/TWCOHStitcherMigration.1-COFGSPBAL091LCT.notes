@@ -156,11 +156,6 @@ systemctl stop ntpd;ntpdate 71.44.37.103;ntpdate 71.44.37.103;sleep 3;systemctl 
 exit
 
 
-systemctl stop ntpd;ntpdate 71.10.216.7;ntpdate 71.10.216.7;sleep 3;systemctl start ntpd;systemctl status ntpd;sleep 3;ntpstat
-
-systemctl start polkit; systemctl status polkit
-
-ntpstat 
 
 
 
@@ -173,14 +168,6 @@ knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-
 knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x silver -P 'JjqG3aM?Toe&47' --sudo 69.23.28.92 -N vca087twcoh.codc.oh.charter.com -E twcoh        
 
 bootstrapCMD = "knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x "+user+" -P \'"+password+"\' --sudo "+IPAddr+" -N "+hostname+" -E "+RDC+" -r recipe[chtr_stitcher],recipe[chtr_logstash],recipe[chtr_nrpe]"
-
-
-
-
-
-knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x silver -P 'JjqG3aM?Toe&47' --sudo 69.23.28.83 -N vca078twcoh.codc.oh.charter.com -E twcoh        
-
-knife bootstrap --no-host-key-verify -y --node-ssl-verify-mode none --bootstrap-url http://cache01pvdcco.pvdc.co.charter.com/artifactory/rpm_chef_centos_7_repo/client/install.sh -x silver -P 'BeEf@L%C0usC0us@G0Lg@r!' --sudo 69.23.28.92 -N vca087twcoh.codc.oh.charter.com -E twcoh        
 
 
 to manually chef - 
@@ -215,7 +202,7 @@ to delete boot sector and reboot
 sudo dd if=/dev/zero of=/dev/sda bs=1M count=100
 
 sudo shutdown -r now
-
+￼
 
 
 
@@ -225,17 +212,9 @@ knife node delete -y vca087twcoh.codc.oh.charter.com
 
 knife client delete -y vca087twcoh.codc.oh.charter.com
 
-knife node show vca001twcoh.codc.oh.charter.com
+knife node show vca087twcoh.codc.oh.charter.com
 
 
-
-
-
-
-
-
-
-https://mop3.awas.corp.chartercom.com/mops/44448
 
 
 

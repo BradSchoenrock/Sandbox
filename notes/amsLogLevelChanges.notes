@@ -1,0 +1,28 @@
+
+
+
+
+
+# log level changes brad.schoenrock@charter.com (715)216-2249
+# note chef runs at 1:00 AM local time if cco is enabled. 
+# at specified time UTC (before epg publish) raise any WARN log levels to INFO 
+0 13 * * * cp -f /etc/tomcat/charter/logback.xml /root/logback.xml_bak_DONOTDELETE; sed -i 's/"INFO"/"WARN"/' /etc/tomcat/charter/logback.xml
+# at specified time UTC (after epg publish) return to chef defined settings. 
+0 15 * * * cp -f /root/logback.xml_bak_DONOTDELETE /etc/tomcat/charter/logback.xml; rm -f /root/logback.xml_bak_DONOTDELETE
+# at specified time UTC (before primetime) raise any WARN log levels to INFO 
+0 22 * * * cp -f /etc/tomcat/charter/logback.xml /root/logback.xml_bak_DONOTDELETE; sed -i 's/"INFO"/"WARN"/' /etc/tomcat/charter/logback.xml
+# at specified time UTC (after primetime) return to chef defined settings. 
+0 2 * * * cp -f /root/logback.xml_bak_DONOTDELETE /etc/tomcat/charter/logback.xml; rm -f /root/logback.xml_bak_DONOTDELETE
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+
+
+
+0 * * * * timeout 3600 tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-$(date +%m%d-%H%M%S) -Z root 2> /dev/null
+0 * * * * grep "webkit-v3 health checked timed out" /var/log/cloudtv.log* > /tmp/virga_timeout_events$(date +%m%d-%H%M%S).log
+0 0 * * * rm /tmp/virga_timeout_events$(date -d '-2 day' +%m%d)*
+
+
+
+
+
+
+ansible vca*twc*.charter.com -b -m shell -a 'crontab -l > /root/tmpfile.txt;  cp /root/tmpfile.txt /root/crontab_backup.txt;  echo "0 * * * * /bin/timeout 3600 /sbin/tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-\$(date +\\%m\\%d-\\%H\\%M\\%S).pcap -Z root 2> /dev/null" >> /root/tmpfile.txt;  echo "0 * * * * grep \"webkit-v3 health check\" /var/log/cloudtv.log* > /tmp/virga_timeout_events\$(date +\\%m\\%d-\\%H\\%M\\%S).log" >> /root/tmpfile.txt;  echo "0 3 * * * rm /tmp/capture-\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt; echo "0 3 * * * rm /tmp/virga_timeout_events\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt;  crontab /root/tmpfile.txt;  rm -f /root/tmpfile.txt  '
+
+
+
+ansible vca*twc*.charter.com -b -m shell -a 'rm /tmp/capture*; rm /tmp/virga_timeout*.log'
+
+
+ansible vca*twc*.charter.com -b -m shell -a 'crontab /root/crontab_backup.txt;'
+
+ 
+
+
+
+ansible vca*twcoh.codc.oh.charter.com -b -m shell -a 'crontab /root/crontab_backup.txt;'
+
+ansible vca*twctx.dldc.tx.charter.com -b -m shell -a 'crontab /root/crontab_backup.txt;'
+
+ansible vca*twcsc.spdc.sc.charter.com -b -m shell -a 'crontab /root/crontab_backup.txt;'
+
+ansible vca*twcca.ladc.ca.charter.com -b -m shell -a 'crontab /root/crontab_backup.txt;'
+
+ansible vca*twcny.nydc.ny.charter.com -b -m shell -a 'crontab /root/crontab_backup.txt;'
+
+ansible vca*twcny.sydc.ny.charter.com -b -m shell -a 'crontab /root/crontab_backup.txt;'
+
+
+
+
+ansible vca*twcoh.codc.oh.charter.com -b -m shell -a 'crontab -l > /root/tmpfile.txt;  cp /root/tmpfile.txt /root/crontab_backup.txt;  echo "0 * * * * /bin/timeout 3600 /sbin/tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-\$(date +\\%m\\%d-\\%H\\%M\\%S).pcap -Z root 2> /dev/null" >> /root/tmpfile.txt;  echo "0 * * * * grep \"webkit-v3 health check\" /var/log/cloudtv.log* > /tmp/virga_timeout_events\$(date +\\%m\\%d-\\%H\\%M\\%S).log" >> /root/tmpfile.txt;  echo "0 3 * * * rm /tmp/capture-\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt; echo "0 3 * * * rm /tmp/virga_timeout_events\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt;  crontab /root/tmpfile.txt;  rm -f /root/tmpfile.txt  '
+
+ansible vca*twctx.dldc.tx.charter.com -b -m shell -a 'crontab -l > /root/tmpfile.txt;  cp /root/tmpfile.txt /root/crontab_backup.txt;  echo "0 * * * * /bin/timeout 3600 /sbin/tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-\$(date +\\%m\\%d-\\%H\\%M\\%S).pcap -Z root 2> /dev/null" >> /root/tmpfile.txt;  echo "0 * * * * grep \"webkit-v3 health check\" /var/log/cloudtv.log* > /tmp/virga_timeout_events\$(date +\\%m\\%d-\\%H\\%M\\%S).log" >> /root/tmpfile.txt;  echo "0 3 * * * rm /tmp/capture-\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt; echo "0 3 * * * rm /tmp/virga_timeout_events\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt;  crontab /root/tmpfile.txt;  rm -f /root/tmpfile.txt  '
+
+ansible vca*twcsc.spdc.sc.charter.com -b -m shell -a 'crontab -l > /root/tmpfile.txt;  cp /root/tmpfile.txt /root/crontab_backup.txt;  echo "0 * * * * /bin/timeout 3600 /sbin/tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-\$(date +\\%m\\%d-\\%H\\%M\\%S).pcap -Z root 2> /dev/null" >> /root/tmpfile.txt;  echo "0 * * * * grep \"webkit-v3 health check\" /var/log/cloudtv.log* > /tmp/virga_timeout_events\$(date +\\%m\\%d-\\%H\\%M\\%S).log" >> /root/tmpfile.txt;  echo "0 3 * * * rm /tmp/capture-\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt; echo "0 3 * * * rm /tmp/virga_timeout_events\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt;  crontab /root/tmpfile.txt;  rm -f /root/tmpfile.txt  '
+
+ansible vca*twcca.ladc.ca.charter.com -b -m shell -a 'crontab -l > /root/tmpfile.txt;  cp /root/tmpfile.txt /root/crontab_backup.txt;  echo "0 * * * * /bin/timeout 3600 /sbin/tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-\$(date +\\%m\\%d-\\%H\\%M\\%S).pcap -Z root 2> /dev/null" >> /root/tmpfile.txt;  echo "0 * * * * grep \"webkit-v3 health check\" /var/log/cloudtv.log* > /tmp/virga_timeout_events\$(date +\\%m\\%d-\\%H\\%M\\%S).log" >> /root/tmpfile.txt;  echo "0 3 * * * rm /tmp/capture-\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt; echo "0 3 * * * rm /tmp/virga_timeout_events\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt;  crontab /root/tmpfile.txt;  rm -f /root/tmpfile.txt  '
+
+ansible vca*twcny.nydc.ny.charter.com -b -m shell -a 'crontab -l > /root/tmpfile.txt;  cp /root/tmpfile.txt /root/crontab_backup.txt;  echo "0 * * * * /bin/timeout 3600 /sbin/tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-\$(date +\\%m\\%d-\\%H\\%M\\%S).pcap -Z root 2> /dev/null" >> /root/tmpfile.txt;  echo "0 * * * * grep \"webkit-v3 health check\" /var/log/cloudtv.log* > /tmp/virga_timeout_events\$(date +\\%m\\%d-\\%H\\%M\\%S).log" >> /root/tmpfile.txt;  echo "0 3 * * * rm /tmp/capture-\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt; echo "0 3 * * * rm /tmp/virga_timeout_events\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt;  crontab /root/tmpfile.txt;  rm -f /root/tmpfile.txt  '
+
+ansible vca*twcny.sydc.ny.charter.com -b -m shell -a 'crontab -l > /root/tmpfile.txt;  cp /root/tmpfile.txt /root/crontab_backup.txt;  echo "0 * * * * /bin/timeout 3600 /sbin/tcpdump -i any port 9082 -s0 -nNnn -w /tmp/capture-\$(date +\\%m\\%d-\\%H\\%M\\%S).pcap -Z root 2> /dev/null" >> /root/tmpfile.txt;  echo "0 * * * * grep \"webkit-v3 health check\" /var/log/cloudtv.log* > /tmp/virga_timeout_events\$(date +\\%m\\%d-\\%H\\%M\\%S).log" >> /root/tmpfile.txt;  echo "0 3 * * * rm /tmp/capture-\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt; echo "0 3 * * * rm /tmp/virga_timeout_events\$(date -d \"-2 day\" +\\%m\\%d)*" >> /root/tmpfile.txt;  crontab /root/tmpfile.txt;  rm -f /root/tmpfile.txt  '
+
+
+ansible vca*.charter.com -b -m shell -a 'rm /tmp/capture*; rm /tmp/virga_timeout*.log'

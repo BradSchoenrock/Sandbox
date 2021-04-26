@@ -1,0 +1,37 @@
+{
+  "roomId": "Y2lzY29zcGFyazovL3VzL1JPT00vYmJjZWIxYWQtNDNmMS0zYjU4LTkxNDctZjE0YmIwYzRkMTU0",
+  "text": "HelloWorld",
+  
+}
+
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"markdown" : "This is a formatted message from a Cisco Webex Teams incoming webhook $(hostname)."}' "https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMzQzYThlMzYtOGJmNS00ZmQ2LTgxOTEtMWIyYWNkZDVkYmFh".
+
+
+https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMzQzYThlMzYtOGJmNS00ZmQ2LTgxOTEtMWIyYWNkZDVkYmFh
+
+
+
+
+
+
+
+export https_proxy=http://98.9.227.108:8080
+export http_proxy=http://98.9.227.108:8080
+curl -X POST -H "Content-Type: application/json" -d '{"text" : "This is a message from a Cisco Webex Teams incoming webhook."}' "https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMzQzYThlMzYtOGJmNS00ZmQ2LTgxOTEtMWIyYWNkZDVkYmFh"
+
+
+
+
+
+
+export https_proxy=http://98.9.227.108:8080   
+
+curl -X POST -H "Content-Type: application/json" -d "{\"text\" : \"(date) Stale Session Detected. process killed. ${proc1}\"}" "https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMTZlODJkN2MtYWIxYS00MDZjLWJkNjQtZTc0ZjQ2ZWIzOGZm"    
+
+
+
+

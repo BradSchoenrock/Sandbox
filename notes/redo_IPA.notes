@@ -1,0 +1,65 @@
+
+
+
+so we have to reboot, fix polkit, redo ipa, then we're good?
+
+
+
+reboot
+
+
+
+systemctl restart polkit; h5restartall; chef-client -E twcoh -o recipe[chtr_freeipa::redo]
+
+
+
+
+ansible vca0[0-9][0-9]twcoh.codc.oh.charter.com -u silver -b -m shell -a 'reboot'
+
+ansible vca0[0-9][0-9]twcoh.codc.oh.charter.com -u silver -b -m shell -a 'systemctl restart polkit; h5restartall; chef-client -E twcoh -o recipe[chtr_freeipa::redo]'
+
+ansible vca0[0-9][0-9]twcoh.codc.oh.charter.com -b -m shell -a 'free -m'
+
+
+
+
+
+
+ansible vca1[0-9][0-9]twcoh.codc.oh.charter.com -u silver -b -m shell -a 'reboot'
+
+ansible vca1[0-9][0-9]twcoh.codc.oh.charter.com -u silver -b -m shell -a 'systemctl restart polkit; h5restartall; chef-client -E twcoh -o recipe[chtr_freeipa::redo]'
+
+ansible vca1[0-9][0-9]twcoh.codc.oh.charter.com -b -m shell -a 'free -m'
+
+
+
+
+
+
+
+ansible vca2[0-9][0-9]twcoh.codc.oh.charter.com -u silver -b -m shell -a 'reboot'
+
+ansible vca2[0-9][0-9]twcoh.codc.oh.charter.com -u silver -b -m shell -a 'systemctl restart polkit; h5restartall; chef-client -E twcoh -o recipe[chtr_freeipa::redo]'
+
+ansible vca2[0-9][0-9]twcoh.codc.oh.charter.com -b -m shell -a 'free -m'
+
+
+
+
+for i in {1..9}; do downtime -f vca00${i}twcoh.codc.oh.charter.com -m clear -c "INC000005662127 - twcoh stitchers polkit/IPA issues"; downtime -f vca00${i}twcoh.codc.oh.charter.com -S nrpe_service_kestrel,nrpe_service_collector,nrpe_service_virga -m set -c "returning these services to downtime. These services no longer exist on these servers since the AV2.16 upgrade."; done
+
+for i in {10..99}; do downtime -f vca0${i}twcoh.codc.oh.charter.com -m clear -c "INC000005662127 - twcoh stitchers polkit/IPA issues"; downtime -f vca0${i}twcoh.codc.oh.charter.com -S nrpe_service_kestrel,nrpe_service_collector,nrpe_service_virga -m set -c "returning these services to downtime. These services no longer exist on these servers since the AV2.16 upgrade."; done
+
+for i in {100..290}; do downtime -f vca${i}twcoh.codc.oh.charter.com -m clear -c "INC000005662127 - twcoh stitchers polkit/IPA issues"; downtime -f vca${i}twcoh.codc.oh.charter.com -S nrpe_service_kestrel,nrpe_service_collector,nrpe_service_virga -m set -c "returning these services to downtime. These services no longer exist on these servers since the AV2.16 upgrade."; done
+
+
+downtime -f vca078twcoh.codc.oh.charter.com -m set -c "returning stitcher to downtime for pre-existing hardware fault pre-deployment";
+ 
+ 
+downtime -f vca00${i}twcoh.codc.oh.charter.com -S nrpe_service_kestrel,nrpe_service_collector,nrpe_service_virga -m set -c "returning these services to downtime. These services no longer exist on these servers since the AV2.16 upgrade."
+ 
+ 
+ 
+ 
+ 
+ 
