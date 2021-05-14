@@ -1,24 +1,30 @@
- 
+
+import os
 import sys
-
+from optparse import OptionParser
+import time
 import datetime
-from datetime import timedelta 
+from datetime import date
+from datetime import timedelta
+import subprocess
 
+   
+now = time.gmtime()
+  
+print ("now = ",now)
 
-NowDate = datetime.datetime.utcnow()
-#ThenDate = (datetime.datetime.utcnow() - timedelta(hours=float(sys.argv[1]))).strftime("%Y%m%d")
+dayTime = datetime.datetime(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec)
 
+print ("dayTime=",dayTime)
 
+yearStr = str(dayTime.year)
 
-print (NowDate)
-#print (ThenDate)
+print ("yearStr=",yearStr)
 
-#print (datetime.datetime.now.date)
+yrStr = yearStr
 
-midnight = datetime.time(0, 0, 0, 0)
+print ("yrStr=",yrStr)
 
-print (midnight)
-
-diff = datetime.timedelta(hours=NowDate.hour, minutes=NowDate.minute, seconds=NowDate.second, microseconds=NowDate.microsecond)
-
-print (diff.total_seconds())
+sourceDirRoot = yrStr + ('%.2d%.2d' % (dayTime.month, dayTime.day))
+    
+print ("sourceDirRoot=",sourceDirRoot)
